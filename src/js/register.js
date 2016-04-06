@@ -11,15 +11,15 @@ export default class Register extends Component {
         <form>
           <label>
             Full Name:
-            <input type='text' name='fullName'/>
+            <input type='text' name='full_name'/>
           </label>
           <label>
             Email:
-            <input type='email' name='fullName'/>
+            <input type='email' name='email'/>
           </label>
           <label>
             Username:
-            <input type='text' name='username'/>
+            <input type='text' name='user_name'/>
           </label>
           <label>
             Password:
