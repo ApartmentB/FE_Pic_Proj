@@ -1,6 +1,6 @@
-import React, { Components, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-export default class Home extends Components {
+export default class Home extends Component {
 	static propTypes = {
 
 	}
