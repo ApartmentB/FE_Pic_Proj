@@ -5,10 +5,19 @@ import Register from './register';
 import {ajax} from 'jquery';
 import Home from './home';
 
+function renderHome(){
 render (
-  <Home/>
+  <Home onRegClick={ renderRegister }/>
   ,document.querySelector('.app')
 )
+}
+
+function renderRegister(){
+render (
+  <Register/>
+  ,document.querySelector('.app')
+)
+}
 
 let regAndRender = (user) => {
 
@@ -35,3 +44,5 @@ let regAndRender = (user) => {
   //users.push(contact);
   //renderList();
 }
+
+renderHome();

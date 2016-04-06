@@ -2,19 +2,16 @@ import React, { Component, PropTypes } from 'react';
 
 export default class Home extends Component {
 	static propTypes = {
-
+		onRegClick: PropTypes.func.isRequired
 	}
 
-clickHandler(){
-alert("hey");
-}
-
 	render(){
+	let { onRegClick } = this.props;
 		return(
 			<div>
 				<h1>HintPic</h1>
 
-				<button onClick={ this.clickHandler }>Register</button>
+				<button onClick={ onRegClick }>Register</button>
 
 				<form>
 					<label>
