@@ -15,7 +15,7 @@ export default class Register extends Component {
           </label>
           <label>
             Email:
-            <input type='email' name='fullName'/>
+            <input type='email' name='email'/>
           </label>
           <label>
             Username:
