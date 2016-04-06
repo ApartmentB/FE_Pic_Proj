@@ -3,9 +3,10 @@ import React from 'react';
 import {render} from 'react-dom';
 import Register from './register';
 import {ajax} from 'jquery';
+import Home from './home';
 
 render (
-  <Register/>
+  <Home/>
   ,document.querySelector('.app')
 )
 
