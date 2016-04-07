@@ -4,11 +4,12 @@ import SimpleSerialForm from 'react-simple-serial-form';
 export default class Register extends Component {
 
   static propTypes = {
-    onRegister: PropTypes.func.isRequired
+    onRegister: PropTypes.func.isRequired,
+    onBack: PropTypes.func.isRequired
   }
 
   render() {
-    let { onRegister } = this.props;
+    let { onRegister, onBack } = this.props;
     return (
       <div>
         <SimpleSerialForm onData={ onRegister }>
@@ -30,7 +31,7 @@ export default class Register extends Component {
           </label>
           <button>Register</button>
         </SimpleSerialForm>
-        <button>Back</button>
+        <button onClick={onBack}>Back</button>
       </div>
     );
   }

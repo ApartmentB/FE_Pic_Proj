@@ -8,8 +8,7 @@ import LoggedIn from './logged_in';
 import CreatePost from './create_post';
 import Instructions from './instructions';
 import PostDetails from './post_details';
-
-
+import Cookies from 'js-cookie';
 function renderHome(){
 render (
   <Home onRegClick={ renderRegister }/>
@@ -24,7 +23,9 @@ render (
 }
 function renderRegister(){
 render (
-  <Register onRegister={regAndRender}/>
+  <Register
+    onRegister={regAndRender}
+    onBack={renderHome}/>
   ,document.querySelector('.app')
 )
 }
