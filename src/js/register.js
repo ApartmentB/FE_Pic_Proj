@@ -2,6 +2,7 @@ import React, {PropTypes, Component} from 'react';
 import SimpleSerialForm from 'react-simple-serial-form';
 
 export default class Register extends Component {
+
   static propTypes = {
     onRegister: PropTypes.func.isRequired
   }
