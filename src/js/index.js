@@ -4,11 +4,13 @@ import {render} from 'react-dom';
 import {ajax} from 'jquery';
 import Home from './home';
 import Register from './register';
-import LoggedIn from './logged_in';
+import Dashboard from './dashboard';
 import CreatePost from './create_post';
 import Instructions from './instructions';
 import PostDetails from './post_details';
+import PostFeed from './postfeed';
 import Cookies from 'js-cookie';
+import tempArr from './tempArr'
 function renderHome(){
 render (
   <Home onRegClick={ renderRegister }/>
@@ -31,11 +33,11 @@ render (
 }
 function renderLoggedInHome(user){
   render(
-    <LoggedIn authUser={user}>
-    <div>
-      <img src='http://fillmurray.com/100/100'/>
-    </div>
-    </LoggedIn>
+    <Dashboard authUser={user}>
+      <PostFeed
+      posts={tempArr}
+      onSelect={()=> alert('you clicked me!')}/>
+    </Dashboard>
     ,document.querySelector('.app')
   )}
 function renderPost(clickedPost){
@@ -46,23 +48,26 @@ function renderPost(clickedPost){
 )}
 function regAndRender(user){
 
-  let newUser = new FormData();
-  newUser.append('full_name', user.full_name);
-  newUser.append('email', user.email);
-  newUser.append('user_name', user.user_name);
-  newUser.append('password', user.password);
-  // // NProgress.start();
+  // let newUser = new FormData();
+  // newUser.append('full_name', user.full_name);
+  // newUser.append('email', user.email);
+  // newUser.append('user_name', user.user_name);
+  // newUser.append('password', user.password);
+  // // // NProgress.start();
+
+  console.log('user', user);
 
   ajax({
       url: 'https://tranquil-garden-21235.herokuapp.com/register',
       type: 'POST',
-      data: newUser,
+      data: user,
       cache: false,
       dataType: 'json',
-      processData: false,
-      contentType: false
+      // processData: false,
+      // contentType: false
     }).then((resp) => {
       // NProgress.done();
+      console.log(resp)
       renderLoggedInHome(resp.user);
     });
 }
