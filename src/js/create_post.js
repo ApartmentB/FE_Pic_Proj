@@ -16,7 +16,7 @@ export default class CreatePost extends Component {
 
 	dataHandler(data) {
     data.file = this.file;
-    this.props.onAdd(data);
+    this.props.onCreate(data);
   	}
 
 	dropHandler([file]) {
@@ -37,7 +37,7 @@ export default class CreatePost extends Component {
 				</Dropzone>
 				<label>
 					Caption:
-					<input type="text"/>
+					<input type="text" name="caption"/>
 					<button>Create</button>
 				</label>
 			</SimpleSerialForm>

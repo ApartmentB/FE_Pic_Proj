@@ -67,11 +67,13 @@ function regAndRender(user){
     });
 }
 
-
 // renderLoggedInHome({user_name: 'Larry'});
+function createAndRender(post){
+console.log('post', post);
+}
 
 render(
-<CreatePost onCreate={ x=> x}/>
+<CreatePost onCreate={ createAndRender }/>
 ,document.querySelector('.app')
   )
 
