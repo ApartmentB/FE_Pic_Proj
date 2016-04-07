@@ -5,6 +5,7 @@ import {ajax} from 'jquery';
 import Home from './home';
 import Register from './register';
 import LoggedIn from './logged_in';
+import Instructions from './instructions';
 
 function renderHome(){
 render (
@@ -12,14 +13,18 @@ render (
   ,document.querySelector('.app')
 )
 }
-
-function renderRegister(){
+function renderInstructions(){
 render (
-  <Register onRegister={ regAndRender }/>
+  <Instructions/>
   ,document.querySelector('.app')
 )
 }
-
+function renderRegister(){
+render (
+  <Register onRegister={regAndRender}/>
+  ,document.querySelector('.app')
+)
+}
 function renderLoggedInHome(user){
   render(
     <LoggedIn authUser={user}>
@@ -49,9 +54,8 @@ function regAndRender(user){
   //     contentType: false
   //   }).then(() => {
       // NProgress.done();
-
       renderLoggedInHome(user);
     // });
 }
-
-renderLoggedInHome({user_name: 'Larry'});
+// renderLoggedInHome({user_name: 'Larry'});
+renderInstructions();
