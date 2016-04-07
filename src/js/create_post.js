@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import SimpleSerialForm from 'react-simple-serial-form';
 import Dropzone from 'react-dropzone';
 
 export default class CreatePost extends Component {

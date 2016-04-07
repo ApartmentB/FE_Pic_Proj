@@ -5,6 +5,7 @@ import {ajax} from 'jquery';
 import Home from './home';
 import Register from './register';
 import LoggedIn from './logged_in';
+import CreatePost from './create_post';
 
 function renderHome(){
 render (
@@ -54,4 +55,10 @@ function regAndRender(user){
     // });
 }
 
-renderLoggedInHome({user_name: 'Larry'});
+// renderLoggedInHome({user_name: 'Larry'});
+render(
+<CreatePost onCreate={ x=> x}/>
+,document.querySelector('.app')
+  )
+
+
