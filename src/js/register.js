@@ -1,14 +1,16 @@
 import React, {PropTypes, Component} from 'react';
+import SimpleSerialForm from 'react-simple-serial-form';
 
 export default class Register extends Component {
-  constructor() {
-    super();
+  static propTypes = {
+    onRegister: PropTypes.func.isRequired
   }
 
   render() {
+    let { onRegister } = this.props;
     return (
       <div>
-        <form>
+        <SimpleSerialForm onData={ onRegister }>
           <label>
             Full Name:
             <input type='text' name='full_name'/>
@@ -26,7 +28,7 @@ export default class Register extends Component {
             <input type='password' name='password'/>
           </label>
           <button>Register</button>
-        </form>
+        </SimpleSerialForm>
         <button>Back</button>
       </div>
     );

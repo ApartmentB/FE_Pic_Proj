@@ -14,7 +14,7 @@ render (
 
 function renderRegister(){
 render (
-  <Register/>
+  <Register onRegister={ regAndRender }/>
   ,document.querySelector('.app')
 )
 }
@@ -38,7 +38,7 @@ let regAndRender = (user) => {
       contentType: false
     }).then(() => {
       // NProgress.done();
-      renderLoggedInHome();
+      // renderLoggedInHome();
     });
 
   //users.push(contact);
