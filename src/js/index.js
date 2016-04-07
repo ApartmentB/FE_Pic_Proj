@@ -53,18 +53,18 @@ function regAndRender(user){
   // newUser.append('password', user.phone);
   // // NProgress.start();
 
-  // ajax({
-  //     url: 'https://shielded-bayou-85500.herokuapp.com',
-  //     type: 'POST',
-  //     data: user,
-  //     cache: false,
-  //     dataType: 'json',
-  //     processData: false,
-  //     contentType: false
-  //   }).then(() => {
+  ajax({
+      url: 'https://tranquil-garden-21235.herokuapp.com/',
+      type: 'POST',
+      data: user,
+      cache: false,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    }).then((resp) => {
       // NProgress.done();
-      renderLoggedInHome(user);
-    // });
+      renderLoggedInHome(resp.user);
+    });
 }
 
 
