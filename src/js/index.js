@@ -6,6 +6,7 @@ import Home from './home';
 import Register from './register';
 import LoggedIn from './logged_in';
 import Instructions from './instructions';
+import PostDetails from './post_details';
 
 function renderHome(){
 render (
@@ -33,8 +34,13 @@ function renderLoggedInHome(user){
     </div>
     </LoggedIn>
     ,document.querySelector('.app')
-  )
-}
+  )}
+function renderPost(clickedPost){
+  console.log(clickedPost)
+  render(
+  <PostDetails post={clickedPost}/>
+  ,document.querySelector('.app')
+)}
 function regAndRender(user){
 
   // let newUser = new FormData();
@@ -58,4 +64,7 @@ function regAndRender(user){
     // });
 }
 // renderLoggedInHome({user_name: 'Larry'});
-renderInstructions();
+renderPost({url: 'http://fillmurray.com/200/200',
+            title: 'BILL MURRAY',
+            caption: 'BILL'
+})
