@@ -46,17 +46,17 @@ function renderPost(clickedPost){
 )}
 function regAndRender(user){
 
-  // let newUser = new FormData();
-  // newUser.append('full_name', user.name);
-  // newUser.append('email', user.location);
-  // newUser.append('user_name', user.email);
-  // newUser.append('password', user.phone);
+  let newUser = new FormData();
+  newUser.append('full_name', user.full_name);
+  newUser.append('email', user.email);
+  newUser.append('user_name', user.user_name);
+  newUser.append('password', user.password);
   // // NProgress.start();
 
   ajax({
-      url: 'https://tranquil-garden-21235.herokuapp.com/',
+      url: 'https://tranquil-garden-21235.herokuapp.com/register',
       type: 'POST',
-      data: user,
+      data: newUser,
       cache: false,
       dataType: 'json',
       processData: false,
