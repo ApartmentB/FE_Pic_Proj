@@ -37,7 +37,7 @@ export default class CreatePost extends Component {
 				</label>
 			</SimpleSerialForm>
 			
-			<button>Back</button>
+			<button>Cancel</button>
 		</div>
 		)
 	}
