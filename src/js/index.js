@@ -5,8 +5,10 @@ import {ajax} from 'jquery';
 import Home from './home';
 import Register from './register';
 import LoggedIn from './logged_in';
+import CreatePost from './create_post';
 import Instructions from './instructions';
 import PostDetails from './post_details';
+
 
 function renderHome(){
 render (
@@ -63,6 +65,15 @@ function regAndRender(user){
       renderLoggedInHome(user);
     // });
 }
+
+
+// renderLoggedInHome({user_name: 'Larry'});
+
+// render(
+// <CreatePost onCreate={ x=> x}/>
+// ,document.querySelector('.app')
+//   )
+
 // renderLoggedInHome({user_name: 'Larry'});
 renderPost({url: 'http://fillmurray.com/200/200',
             title: 'BILL MURRAY',
