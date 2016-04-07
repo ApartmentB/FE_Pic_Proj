@@ -14,6 +14,11 @@ export default class CreatePost extends Component {
 		}
 	}
 
+	dataHandler(data) {
+    data.file = this.file;
+    this.props.onAdd(data);
+  	}
+
 	dropHandler([file]) {
     this.setState({preview: file.preview});
     this.file = file;
@@ -26,7 +31,7 @@ export default class CreatePost extends Component {
 		<div>
 			<h1>Create Post</h1>
 
-			<SimpleSerialForm onData={ onCreate }>
+			<SimpleSerialForm onData={ ::this.dataHandler }>
 				<Dropzone onDrop={ ::this.dropHandler }>
 					<img src={ preview } height="195px" width="195px"/>
 				</Dropzone>

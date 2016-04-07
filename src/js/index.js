@@ -70,10 +70,13 @@ function regAndRender(user){
 
 // renderLoggedInHome({user_name: 'Larry'});
 
-// render(
-// <CreatePost onCreate={ x=> x}/>
-// ,document.querySelector('.app')
-//   )
+render(
+<CreatePost onCreate={ x=> x}/>
+,document.querySelector('.app')
+  )
 
 // renderLoggedInHome({user_name: 'Larry'});
-renderHome()
+
+// renderHome()
+
+
