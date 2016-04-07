@@ -1,14 +1,10 @@
 import React, {PropTypes, Component} from 'react';
 
 export default class Register extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div>
-        <form>
+        <form method='POST'>
           <label>
             Full Name:
             <input type='text' name='full_name'/>

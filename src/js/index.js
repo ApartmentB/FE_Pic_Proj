@@ -1,9 +1,10 @@
 // Javascript Entry Point
 import React from 'react';
 import {render} from 'react-dom';
-import Register from './register';
 import {ajax} from 'jquery';
 import Home from './home';
+import Register from './register';
+import LoggedIn from './logged_in';
 
 function renderHome(){
 render (
@@ -19,30 +20,37 @@ render (
 )
 }
 
-let regAndRender = (user) => {
+function renderLoggedInHome(user){
+  render(
+    <LoggedIn authUser={user}>
+    <div>
+      <img src='http://fillmurray.com/100/100'/>
+    </div>
+    </LoggedIn>
+    ,document.querySelector('.app')
+  )
+}
+function regAndRender(user){
 
-  let newUser = new FormData();
-  newUser.append('full_name', user.name);
-  newUser.append('email', user.location);
-  newUser.append('user_name', user.email);
-  newUser.append('password', user.phone);
-  // NProgress.start();
+  // let newUser = new FormData();
+  // newUser.append('full_name', user.name);
+  // newUser.append('email', user.location);
+  // newUser.append('user_name', user.email);
+  // newUser.append('password', user.phone);
+  // // NProgress.start();
 
-  ajax({
-      url: 'https://shielded-bayou-85500.herokuapp.com',
-      type: 'POST',
-      data: newUser,
-      cache: false,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    }).then(() => {
+  // ajax({
+  //     url: 'https://shielded-bayou-85500.herokuapp.com',
+  //     type: 'POST',
+  //     data: user,
+  //     cache: false,
+  //     dataType: 'json',
+  //     processData: false,
+  //     contentType: false
+  //   }).then(() => {
       // NProgress.done();
-      renderLoggedInHome();
-    });
-
-  //users.push(contact);
-  //renderList();
+      renderLoggedInHome(user);
+    // });
 }
 
-renderHome();
+renderLoggedInHome({user_name: 'Larry'});
