@@ -1,6 +1,6 @@
 import React, {PropTypes, Component} from 'react';
 
-export default class LoggedIn extends Component {
+export default class Dashboard extends Component {
   static propTypes = {
     authUser: PropTypes.object.isRequired,
   }
