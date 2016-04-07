@@ -6,7 +6,7 @@ export default class CreatePost extends Component {
 	static propTypes = {
 		onCreate: PropTypes.func.isRequired
 	}
-	
+
 	constructor(props){
 		super(props);
 		this.state = {
@@ -25,7 +25,7 @@ export default class CreatePost extends Component {
 		return(
 		<div>
 			<h1>Create Post</h1>
-			
+
 			<SimpleSerialForm onData={ onCreate }>
 				<Dropzone onDrop={ ::this.dropHandler }>
 					<img src={ preview } height="195px" width="195px"/>
@@ -36,7 +36,7 @@ export default class CreatePost extends Component {
 					<button>Create</button>
 				</label>
 			</SimpleSerialForm>
-			
+
 			<button>Cancel</button>
 		</div>
 		)

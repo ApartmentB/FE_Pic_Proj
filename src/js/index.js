@@ -75,7 +75,4 @@ function regAndRender(user){
 //   )
 
 // renderLoggedInHome({user_name: 'Larry'});
-renderPost({url: 'http://fillmurray.com/200/200',
-            title: 'BILL MURRAY',
-            caption: 'BILL'
-})
+renderHome()
