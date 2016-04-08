@@ -11,9 +11,30 @@ import PostDetails from './post_details';
 import PostFeed from './postfeed';
 import Cookies from 'js-cookie';
 import tempArr from './tempArr'
+
+var loggedInUser=null;
+
+function logIn( loginInfo ) {
+
+ajax({
+      url: 'FIXME',
+      type: 'POST',
+      data: loginInfo,
+      cache: false,
+      dataType: 'json'
+    }).then((resp) => {
+      // console.log(resp)
+      if (resp.successful) {
+      renderDashboard(resp.user);
+      } else {
+      renderHome();
+      } 
+    });
+}
+
 function renderHome(){
 render (
-  <Home onRegClick={ renderRegister }/>
+  <Home onRegClick={ renderRegister } onLogIn={ logIn }/>
   ,document.querySelector('.app')
 )
 }
@@ -31,7 +52,7 @@ render (
   ,document.querySelector('.app')
 )
 }
-function renderLoggedInHome(user){
+function renderDashboard(user){
   render(
     <Dashboard authUser={user}>
       <PostFeed
@@ -68,22 +89,24 @@ function regAndRender(user){
     }).then((resp) => {
       // NProgress.done();
       console.log(resp)
-      renderLoggedInHome(resp.user);
+      renderDashboard(resp.user);
     });
 }
 
-// renderLoggedInHome({user_name: 'Larry'});
-function createAndRender(post){
-console.log('post', post);
-}
+//FIXME--COMPLETE RENDER FUNC OF DASHBOARD POSTFEED
+// function createAndRender(post){
 
-render(
-<CreatePost onCreate={ createAndRender }/>
-,document.querySelector('.app')
-  )
+// <PostFeed />
+// ,document.querySelector('.app');
+// }
 
-// renderLoggedInHome({user_name: 'Larry'});
+// render(
+// <CreatePost onCreate={ createAndRender }/>
+// ,document.querySelector('.app')
+//   )
 
-// renderHome()
+
+
+
 
 

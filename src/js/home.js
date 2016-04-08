@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import SimpleSerialForm from 'react-simple-serial-form';
 
 export default class Home extends Component {
 	static propTypes = {
-		onRegClick: PropTypes.func.isRequired
+		onRegClick: PropTypes.func.isRequired,
+		onLogIn: PropTypes.func.isRequired
 	}
 
 	render(){
@@ -13,7 +15,7 @@ export default class Home extends Component {
 
 				<button onClick={ onRegClick }>Register</button>
 
-				<form>
+				<SimpleSerialForm onData={ onLogIn }>
 					<label>
 					Login:
 					<input type="text" name="user-name" placeholder="Username"/>
@@ -28,7 +30,7 @@ export default class Home extends Component {
 					<p>És un fet establert de forma evident que un lector...</p>
 
 					<button>Log in</button>
-				</form>
+				</SimpleSerialForm>
 
 			</div>
 		);
