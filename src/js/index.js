@@ -24,7 +24,8 @@ ajax({
       dataType: 'json'
     }).then((resp) => {
       console.log(resp)
-      if (resp) {
+      if (resp) { 
+
       renderDashboard(resp);
       } else {
       renderHome();
@@ -107,3 +108,10 @@ renderHome()
 // <CreatePost onCreate={ createAndRender }/>
 // ,document.querySelector('.app')
 //   )
+
+// Cookies.set('current_user', {
+//           user_name: resp.user.user_name,
+//           auth_token: resp.user.auth_token
+//         });
+
+//       console.log(Cookies.getJSON('current_user')); 
