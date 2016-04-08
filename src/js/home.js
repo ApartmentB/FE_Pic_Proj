@@ -18,7 +18,7 @@ export default class Home extends Component {
 				<SimpleSerialForm onData={ onLogIn }>
 					<label>
 					Login:
-					<input type="text" name="user-name" placeholder="Username"/>
+					<input type="text" name="user_name" placeholder="Username"/>
 					</label>
 
 					<label>

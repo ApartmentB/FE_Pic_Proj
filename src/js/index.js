@@ -25,7 +25,7 @@ ajax({
     }).then((resp) => {
       console.log(resp)
       if (resp) {
-      renderDashboard(resp.user_name);
+      renderDashboard(resp);
       } else {
       renderHome();
       }

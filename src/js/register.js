@@ -15,19 +15,19 @@ export default class Register extends Component {
         <SimpleSerialForm onData={ onRegister }>
           <label>
             Full Name:
-            <input type='text' name='full_name' defaultValue='john smith'/>
+            <input type='text' name='full_name'/>
           </label>
           <label>
             Email:
-            <input type='email' name='email' defaultValue='john@smith.com'/>
+            <input type='email' name='email'/>
           </label>
           <label>
             Username:
-            <input type='text' name='user_name' defaultValue='john_user'/>
+            <input type='text' name='user_name'/>
           </label>
           <label>
             Password:
-            <input type='password' name='password' defaultValue='pw'/>
+            <input type='password' name='password'/>
           </label>
           <button>Register</button>
         </SimpleSerialForm>
