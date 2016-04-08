@@ -17,24 +17,26 @@ var loggedInUser=null;
 function logIn( loginInfo ) {
 
 ajax({
-      url: 'FIXME',
+      url: 'https://tranquil-garden-21235.herokuapp.com/login',
       type: 'POST',
       data: loginInfo,
       cache: false,
       dataType: 'json'
     }).then((resp) => {
-      // console.log(resp)
-      if (resp.successful) {
-      renderDashboard(resp.user);
+      console.log(resp)
+      if (resp) {
+      renderDashboard(resp.user_name);
       } else {
       renderHome();
-      } 
+      }
     });
 }
 
 function renderHome(){
 render (
-  <Home onRegClick={ renderRegister } onLogIn={ logIn }/>
+  <Home
+  onRegClick={ renderRegister }
+  onLogIn={ logIn }/>
   ,document.querySelector('.app')
 )
 }
@@ -93,6 +95,7 @@ function regAndRender(user){
     });
 }
 
+renderHome()
 //FIXME--COMPLETE RENDER FUNC OF DASHBOARD POSTFEED
 // function createAndRender(post){
 
@@ -104,9 +107,3 @@ function regAndRender(user){
 // <CreatePost onCreate={ createAndRender }/>
 // ,document.querySelector('.app')
 //   )
-
-
-
-
-
-
