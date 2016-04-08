@@ -24,22 +24,38 @@ ajax({
       dataType: 'json'
     }).then((resp) => {
       console.log(resp)
-      if (resp) { 
 
-      renderDashboard(resp);
+      if (resp) {
+        loggedInUser = resp
+        Cookies.set('loggedIn',
+        {
+          user: {
+             user_name: resp.user_name,
+             auth_token: resp.auth_token}
+           })
+      renderDashboard(resp.user);
+
       } else {
-      renderHome();
+      renderHome(loggedIn);
       }
     });
 }
-
-function renderHome(){
-render (
+function logOut(){
+  loggedInUser = null
+  Cookies.remove('loggedIn')
+}
+function renderHome(checkLoggedIn){
+  loggedInUser = Cookies.getJSON(checkLoggedIn)
+  if (Cookies.getJSON(checkLoggedIn)){
+    renderDashboard(loggedInUser)
+  }
+  else{
+    render (
   <Home
   onRegClick={ renderRegister }
   onLogIn={ logIn }/>
   ,document.querySelector('.app')
-)
+)}
 }
 function renderInstructions(){
 render (
@@ -57,7 +73,7 @@ render (
 }
 function renderDashboard(user){
   render(
-    <Dashboard authUser={user}>
+    <Dashboard authUser={user} onLogOut={logOut}>
       <PostFeed
       posts={tempArr}
       onSelect={()=> alert('you clicked me!')}/>
@@ -95,8 +111,9 @@ function regAndRender(user){
       renderDashboard(resp.user);
     });
 }
+Cookies.remove('loggedIn')
 
-renderHome()
+renderHome('loggedIn')
 //FIXME--COMPLETE RENDER FUNC OF DASHBOARD POSTFEED
 // function createAndRender(post){
 
