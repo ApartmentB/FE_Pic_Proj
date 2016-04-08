@@ -8,7 +8,7 @@ export default class Home extends Component {
 	}
 
 	render(){
-	let { onRegClick } = this.props;
+	let { onRegClick, onLogIn } = this.props;
 		return(
 			<div>
 				<h1>HintPic</h1>
@@ -23,7 +23,7 @@ export default class Home extends Component {
 
 					<label>
 					Password:
-					<input type="text" name="password" placeholder="Password"/>
+					<input type="password" name="password" placeholder="Password"/>
 					</label>
 
 					<img src="http://fillmurray.com/50/50"/>
