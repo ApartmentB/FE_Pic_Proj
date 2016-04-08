@@ -12,7 +12,7 @@ import PostFeed from './postfeed';
 import Cookies from 'js-cookie';
 import tempArr from './tempArr'
 
-var loggedInUser=null;
+let currentUser = null;
 
 function logIn( loginInfo ) {
 
@@ -23,39 +23,37 @@ ajax({
       cache: false,
       dataType: 'json'
     }).then((resp) => {
-      console.log(resp)
-
+      console.log(resp.user)
       if (resp) {
-        loggedInUser = resp
-        Cookies.set('loggedIn',
-        {
-          user: {
-             user_name: resp.user_name,
-             auth_token: resp.auth_token}
-           })
+        currentUser = Cookies.set( 'currentUser',
+        {user: resp.user}, { expires: 1 })
       renderDashboard(resp.user);
 
       } else {
-      renderHome(loggedIn);
+      renderHome();
       }
     });
 }
 function logOut(){
-  loggedInUser = null
-  Cookies.remove('loggedIn')
+  Cookies.remove('currentUser')
+  currentUser = null
+  renderHome()
 }
-function renderHome(checkLoggedIn){
-  loggedInUser = Cookies.getJSON(checkLoggedIn)
-  if (Cookies.getJSON(checkLoggedIn)){
-    renderDashboard(loggedInUser)
+function renderHome(){
+
+  if (Cookies.getJSON('currentUser')){
+    currentUser = Cookies.getJSON('currentUser')
+    renderDashboard(currentUser)
   }
   else{
-    render (
-  <Home
-  onRegClick={ renderRegister }
-  onLogIn={ logIn }/>
-  ,document.querySelector('.app')
-)}
+    currentUser = null
+    render(
+        <Home
+        onRegClick={renderRegister}
+        onLogIn={logIn}/>
+        , document.querySelector('.app')
+    )
+  }
 }
 function renderInstructions(){
 render (
@@ -108,12 +106,12 @@ function regAndRender(user){
     }).then((resp) => {
       // NProgress.done();
       console.log(resp)
-      renderDashboard(resp.user);
+      renderDashboard(resp);
     });
 }
-Cookies.remove('loggedIn')
+Cookies.remove('currentUser')
 
-renderHome('loggedIn')
+renderHome()
 //FIXME--COMPLETE RENDER FUNC OF DASHBOARD POSTFEED
 // function createAndRender(post){
 
@@ -131,4 +129,4 @@ renderHome('loggedIn')
 //           auth_token: resp.user.auth_token
 //         });
 
-//       console.log(Cookies.getJSON('current_user')); 
+//       console.log(Cookies.getJSON('current_user'));
