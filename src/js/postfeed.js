@@ -7,7 +7,7 @@ export default class PostFeed extends Component {
   }
   populate(post){
     let {onSelect} = this.props
-    return (<li onClick={onSelect.bind(null, post)}>
+    return (<li key={post.imgURL} onClick={onSelect.bind(null, post)}>
            <img src={post.imgURL} alt={post.caption}/>
            {post.status}
            </li>

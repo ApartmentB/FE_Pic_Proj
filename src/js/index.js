@@ -24,11 +24,10 @@ ajax({
       dataType: 'json'
     }).then((resp) => {
       console.log(resp.user)
-      if (resp) {
+      if (resp.user) {
         currentUser = Cookies.set( 'currentUser',
-        {user: resp.user}, { expires: 1 })
+        resp.user, { expires: 1 })
       renderDashboard(resp.user);
-
       } else {
       renderHome();
       }
@@ -71,13 +70,28 @@ render (
 }
 function renderDashboard(user){
   render(
-    <Dashboard authUser={user} onLogOut={logOut}>
+    <Dashboard
+    authUser={user}
+    onLogOut={logOut}
+    onMake={renderCreate}>
       <PostFeed
       posts={tempArr}
       onSelect={()=> alert('you clicked me!')}/>
     </Dashboard>
     ,document.querySelector('.app')
   )}
+
+function renderCreate(){
+  render(
+    <CreatePost onCreate={createAndRender}/>
+    ,document.querySelector('.app')
+  )
+}
+function createAndRender(post){
+  //ajax post to back end//
+  tempArr.push(post)
+  renderDashboard(Cookies.getJSON('currentUser'))
+}
 function renderPost(clickedPost){
   console.log(clickedPost)
   render(
@@ -109,24 +123,6 @@ function regAndRender(user){
       renderDashboard(resp);
     });
 }
-Cookies.remove('currentUser')
+// Cookies.remove('currentUser')
 
 renderHome()
-//FIXME--COMPLETE RENDER FUNC OF DASHBOARD POSTFEED
-// function createAndRender(post){
-
-// <PostFeed />
-// ,document.querySelector('.app');
-// }
-
-// render(
-// <CreatePost onCreate={ createAndRender }/>
-// ,document.querySelector('.app')
-//   )
-
-// Cookies.set('current_user', {
-//           user_name: resp.user.user_name,
-//           auth_token: resp.user.auth_token
-//         });
-
-//       console.log(Cookies.getJSON('current_user'));
