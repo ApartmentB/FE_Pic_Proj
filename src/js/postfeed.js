@@ -1,26 +1,9 @@
 import React, {PropTypes, Component} from 'react';
-import {ajax} from 'jquery';
 
 export default class PostFeed extends Component {
   static propTypes = {
     posts: PropTypes.array.isRequired,
     onSelect: PropTypes.func.isRequired,
-  }
-  constructor(props){
-    super(props);
-    this.state = {
-      posts: []
-    }
-  }
-  getPosts(){
-    let url = 'https://tranquil-garden-21235.herokuapp.com/posts';
-    setInterval(
-      ajax(url).then(posts) => {
-        this.setState({
-          posts: [posts]
-        })
-      }
-    )
   }
   populate(post){
     let {onSelect} = this.props
@@ -31,7 +14,7 @@ export default class PostFeed extends Component {
          )
        }
   render() {
-    let {posts} = this.state;
+    let {posts} = this.props;
     return (
       <div>
         {posts.map(::this.populate)}

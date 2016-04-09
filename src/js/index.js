@@ -84,7 +84,7 @@ function renderDashboard(user){
     onMake={renderCreate}>
       <PostFeed
       posts={tempArr}
-      onSelect={()=> alert('you clicked me!')}/>
+      onSelect={renderPost}/>
     </Dashboard>
     ,document.querySelector('.app')
   )}
@@ -126,7 +126,10 @@ function createAndRender(postData){
 function renderPost(clickedPost){
   console.log(clickedPost)
   render(
-  <PostDetails post={clickedPost}/>
+  <PostDetails
+  post={clickedPost}
+  onBack={renderDashboard}
+  currentUser={currentUser}/>
   ,document.querySelector('.app')
 )}
 //Sends the registration info to the back end to add the user to the data base//
