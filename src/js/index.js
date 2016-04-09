@@ -28,6 +28,7 @@ ajax({
       if (resp.user) {
         currentUser = Cookies.set( 'currentUser',
         resp.user, { expires: 1 })
+        console.log(currentUser)
       renderDashboard(resp.user);
       } else {
       renderHome();
@@ -97,11 +98,28 @@ function renderCreate(){
   )
 }
 //Sends the new post information to the back end and renders the dashboard with the currentUser//
-/*TODO: SET UP AJAX TO BACK END*/
-function createAndRender(post){
+function createAndRender(postData){
+  console.log(currentUser)
   //ajax post to back end//
-  tempArr.push(post)
-  renderDashboard(Cookies.getJSON('currentUser'))
+  let newPost = new FormData();
+  newPost.append('caption', postData.caption);
+  newPost.append('title', postData.title);
+  newPost.append('file', postData.file);
+  newPost.append('user', Cookies.getJSON('currentUser'));
+  ajax({
+      url: 'https://tranquil-garden-21235.herokuapp.com/post',
+      type: 'POST',
+      data: newPost,
+      cache: false,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    }).then((resp) => {
+      // console.log(resp.user)
+      if (resp.post) {
+        renderDashboard(currentUser)
+    };
+  })
 }
 //Renders the actual game to be played when a post is clicked//
 function renderPost(clickedPost){
