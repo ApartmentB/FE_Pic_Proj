@@ -13,7 +13,7 @@ export default class Home extends Component {
 			<div>
 
 				<div className="reg-ssf">
-					<div><button onClick={ onRegClick }>Register</button></div>
+					<div><button className="btn" onClick={ onRegClick }>Register</button></div>
 
 					<div className="SSF">
 						<SimpleSerialForm onData={ onLogIn }>
@@ -30,9 +30,10 @@ export default class Home extends Component {
 									<input type="password" name="password" placeholder="Password"/>
 									</label>
 								</div>
+
+								<button className="btn">Log in</button>
 							</div>
 
-							<button>Log in</button>
 						</SimpleSerialForm>
 					</div> 
 				</div> 
@@ -44,7 +45,7 @@ export default class Home extends Component {
 
 
 				<div className="hero-image">
-					<img src="http://fillmurray.com/50/50"/>
+					<img src="http://rifarmsandfood.com/blog/wp-content/uploads/2012/01/Fainting-Goat.jpg"/>
 					<p>Welcome to HintPic, the free forum to post pics, share with 
 					friends, and win points.</p>
 				</div>
