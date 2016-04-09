@@ -72,6 +72,7 @@ render (
 )
 }
 function renderDashboard(user){
+
   render(
     <Dashboard authUser={user} onLogOut={logOut}>
       <PostFeed

@@ -1,5 +1,55 @@
 /* CSS Entry Point */
-
-// Turn on freq used libraries
 @import 'normalize';
 // @import 'font-awesome/scss/font-awesome';
+
+$background-green: #4EA037;
+$header-green: #C9E3C5;
+$content-background-gray: #DDDDDD;
+
+.app{
+	background: $background-green;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1, h2, h3{
+	color: $header-green;
+	font-family: Arial;
+}
+
+//Homepage
+.hintpic{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+    justify-content: space-around;
+}
+
+.SSF{
+	border: 3px solid red;
+	// display: flex;
+	// flex-direction: column-reverse;
+	.labels{
+		border: 2px solid orange;
+	}
+	button{
+		border: 2px solid pink;
+	}
+}
+
+.hero-image{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		img{
+		border: 2px solid blue;
+		}
+		p{
+		border:2px solid blue;
+		}
+	}

@@ -11,26 +11,41 @@ export default class Home extends Component {
 	let { onRegClick, onLogIn } = this.props;
 		return(
 			<div>
-				<h1>HintPic</h1>
 
-				<button onClick={ onRegClick }>Register</button>
+				<div className="hintpic">
+					<div><h1>HintPic</h1></div>
+				</div>
 
-				<SimpleSerialForm onData={ onLogIn }>
-					<label>
-					Login:
-					<input type="text" name="user_name" placeholder="Username"/>
-					</label>
+				<div><button onClick={ onRegClick }>Register</button></div>
 
-					<label>
-					Password:
-					<input type="password" name="password" placeholder="Password"/>
-					</label>
+				<div className="SSF">
+					<SimpleSerialForm onData={ onLogIn }>
 
+						<div className="labels">
+							<div>
+								<label>
+								Login:
+								<input type="text" name="user_name" placeholder="Username"/>
+								</label>
+							</div>
+
+							<div>
+								<label>
+								Password:
+								<input type="password" name="password" placeholder="Password"/>
+								</label>
+							</div>
+						</div>
+
+						<button>Log in</button>
+					</SimpleSerialForm>
+				</div> 
+
+				<div className="hero-image">
 					<img src="http://fillmurray.com/50/50"/>
-					<p>És un fet establert de forma evident que un lector...</p>
-
-					<button>Log in</button>
-				</SimpleSerialForm>
+					<p>Welcome to HintPic, the free forum to post pics, share with 
+					friends, and win points.</p>
+				</div>
 
 			</div>
 		);
