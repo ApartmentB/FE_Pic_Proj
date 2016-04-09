@@ -13,7 +13,7 @@ export default class Home extends Component {
 			<div>
 
 				<div className="reg-ssf">
-					<div><button className="btn" onClick={ onRegClick }>Register</button></div>
+					<div><button className="btn" id="btn-reg" onClick={ onRegClick }>Register</button></div>
 
 					<div className="SSF">
 						<SimpleSerialForm onData={ onLogIn }>
@@ -31,7 +31,7 @@ export default class Home extends Component {
 									</label>
 								</div>
 
-								<button className="btn">Log in</button>
+								<button className="btn" id="btn-login">Log in</button>
 							</div>
 
 						</SimpleSerialForm>
