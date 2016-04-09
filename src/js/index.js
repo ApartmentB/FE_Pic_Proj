@@ -74,6 +74,7 @@ render (
 )}
 //Renders the dashboard when given a currentUser//
 function renderDashboard(user){
+
   render(
     <Dashboard
     authUser={user}
