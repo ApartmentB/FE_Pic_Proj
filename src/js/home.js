@@ -12,34 +12,36 @@ export default class Home extends Component {
 		return(
 			<div>
 
+				<div className="reg-ssf">
+					<div><button onClick={ onRegClick }>Register</button></div>
+
+					<div className="SSF">
+						<SimpleSerialForm onData={ onLogIn }>
+
+							<div className="labels">
+								<div>
+									<label>
+									<input type="text" name="user_name" placeholder="Username"/>
+									</label>
+								</div>
+
+								<div>
+									<label>
+									<input type="password" name="password" placeholder="Password"/>
+									</label>
+								</div>
+							</div>
+
+							<button>Log in</button>
+						</SimpleSerialForm>
+					</div> 
+				</div> 
+
+
 				<div className="hintpic">
-					<div><h1>HintPic</h1></div>
+					<div><h1>Hint Pic</h1></div>
 				</div>
 
-				<div><button onClick={ onRegClick }>Register</button></div>
-
-				<div className="SSF">
-					<SimpleSerialForm onData={ onLogIn }>
-
-						<div className="labels">
-							<div>
-								<label>
-								Login:
-								<input type="text" name="user_name" placeholder="Username"/>
-								</label>
-							</div>
-
-							<div>
-								<label>
-								Password:
-								<input type="password" name="password" placeholder="Password"/>
-								</label>
-							</div>
-						</div>
-
-						<button>Log in</button>
-					</SimpleSerialForm>
-				</div> 
 
 				<div className="hero-image">
 					<img src="http://fillmurray.com/50/50"/>
@@ -47,6 +49,36 @@ export default class Home extends Component {
 					friends, and win points.</p>
 				</div>
 
+				<h3>About</h3>
+				<div className="info-box">
+					<div className="info">
+						<h4>Story</h4>
+						<p>Photography is the science, art and practice of creating durable images by recording light or other electromagnetic radiation, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film.[1] </p>
+					</div>
+
+					<div className="info">
+					<h4>Mission</h4>
+						<p>The result with photographic emulsion is an invisible latent image, which is later chemically "developed" into a visible image, either negative or positive depending on the purpose of the photographic material and the method of processing. </p>
+					</div>
+
+					<div className="info">
+					<h4>Outreach</h4>
+						<p>The word "photography" was created from the Greek roots φωτός (phōtos), genitive of φῶς (phōs), "light"[2] and γραφή (graphé) "representation by means of lines" or "drawing",[3] together meaning "drawing with light".[4]</p>
+					</div>
+
+					<div className="info">
+					<h4>Connect</h4>
+						<p> Johann von Maedler, a Berlin astronomer, is credited in a 1932 German history of photography as having used it in an article published on 25 February 1839 in the German newspaper Vossische Zeitung.[6] Both of these claims are now widely reported.</p>
+					</div>
+				</div>
+
+				<footer>
+					<div className="Contact">CONTACT</div>
+					<div className="Employment">EMPLOYMENT</div>
+					<div className="Policies">POLICIES</div>
+					<div className="Fair Use">FAIR USE</div>
+					<div className="Share">Share</div>
+				</footer>
 			</div>
 		);
 	}
