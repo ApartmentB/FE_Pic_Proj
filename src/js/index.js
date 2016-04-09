@@ -24,9 +24,10 @@ ajax({
       cache: false,
       dataType: 'json'
     }).then((resp) => {
-      // console.log(resp.user)
+      console.log(resp.user)
       if (resp.user) {
-        currentUser = Cookies.set( 'currentUser',
+        currentUser = resp.user;
+        Cookies.set( 'currentUser',
         resp.user, { expires: 1 })
         console.log(currentUser)
       renderDashboard(resp.user);
@@ -105,7 +106,7 @@ function createAndRender(postData){
   newPost.append('caption', postData.caption);
   newPost.append('title', postData.title);
   newPost.append('file', postData.file);
-  newPost.append('user', Cookies.getJSON('currentUser'));
+  newPost.append('user', currentUser);
   ajax({
       url: 'https://tranquil-garden-21235.herokuapp.com/post',
       type: 'POST',
@@ -150,7 +151,8 @@ function regAndRender(user){
     }).then((resp) => {
       // console.log(resp.user)
       if (resp.user) {
-      currentUser = Cookies.set( 'currentUser',
+      currentUser = resp.user;
+      Cookies.set( 'currentUser',
       resp.user, { expires: 1 })
       renderDashboard(resp.user);
     };
