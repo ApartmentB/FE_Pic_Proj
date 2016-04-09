@@ -4,19 +4,21 @@ export default class Dashboard extends Component {
   static propTypes = {
     authUser: PropTypes.object.isRequired,
     onLogOut: PropTypes.func.isRequired,
-    onMake: PropTypes.func.isRequired
+    onMake: PropTypes.func.isRequired,
+    onScoreBoard: PropTypes.func.isRequired
   }
   render() {
-    let {authUser, onLogOut, onMake} = this.props;
+    let {authUser, onLogOut, onMake, onUsers, onScoreBoard, children} = this.props;
     return (
       <div>
         <h3>Hello {authUser.user_name}!</h3>
         <aside>
         <button onClick={onMake}>Make A Post</button>
-        <button>Scoreboard</button>
+        <button onClick={onScoreBoard}>Scoreboard</button>
         </aside>
-        {this.props.children}
+        {children}
         <button onClick={onLogOut}>Log Out</button>
+        <button onClick={onUsers}>Get All Users</button>
       </div>
     );
   }

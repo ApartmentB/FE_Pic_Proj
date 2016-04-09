@@ -1,7 +1,7 @@
 // Javascript Entry Point
 import React from 'react';
 import {render} from 'react-dom';
-import {ajax} from 'jquery';
+import {ajax, ajaxSetup} from 'jquery';
 import Home from './home';
 import Register from './register';
 import Dashboard from './dashboard';
@@ -9,6 +9,7 @@ import CreatePost from './create_post';
 import Instructions from './instructions';
 import PostDetails from './post_details';
 import PostFeed from './postfeed';
+import Scoreboard from './scoreboard';
 import Cookies from 'js-cookie';
 import tempArr from './tempArr'
 
@@ -24,15 +25,22 @@ ajax({
       cache: false,
       dataType: 'json'
     }).then((resp) => {
+      console.log(resp)
       console.log(resp.user)
       if (resp.user) {
         currentUser = resp.user;
         Cookies.set( 'currentUser',
         resp.user, { expires: 1 })
+        ajaxSetup({
+            headers: {
+              'auth_token': currentUser.auth_token
+            }
+          })
         console.log(currentUser)
-      renderDashboard(resp.user);
-      } else {
+      renderDashboard(currentUser);
+    } else{
       renderHome();
+      console.log(resp)
       }
     });
 }
@@ -40,6 +48,11 @@ ajax({
 function logOut(){
   Cookies.remove('currentUser')
   currentUser = null
+  ajaxSetup({
+    headers: {
+      'auth_token': ''
+    }
+  })
   renderHome()
 }
 //If currentUser is logged in this renders the dashboard with the currentUser//
@@ -66,6 +79,17 @@ render (
   <Instructions/>
   ,document.querySelector('.app')
 )}
+//Renders the scoreboard page when the scoreboard button is clicked//
+function renderScoreBoard(){
+  render(
+    <Scoreboard
+    currentUser={currentUser}
+    onBack={renderDashboard}
+    users={[]}
+    />
+    ,document.querySelector('.app')
+  )
+}
 //Renders the registration page when the Register button is clicked//
 function renderRegister(){
 render (
@@ -81,13 +105,19 @@ function renderDashboard(user){
     <Dashboard
     authUser={user}
     onLogOut={logOut}
-    onMake={renderCreate}>
+    onMake={renderCreate}
+    onUsers={getUsers}
+    onScoreBoard={renderScoreBoard}>
       <PostFeed
       posts={tempArr}
       onSelect={renderPost}/>
     </Dashboard>
     ,document.querySelector('.app')
   )}
+//Test Function for getting all users//
+function getUsers(){
+  ajax('https://tranquil-garden-21235.herokuapp.com/').then((data)=> console.log(data))
+}
 //Renders the page that allows you to create a new post//
 function renderCreate(){
   render(
@@ -114,7 +144,10 @@ function createAndRender(postData){
       cache: false,
       dataType: 'json',
       processData: false,
-      contentType: false
+      contentType: false,
+      headers: {
+        'auth_token': currentUser.auth_token
+      }
     }).then((resp) => {
       // console.log(resp.user)
       if (resp.post) {
