@@ -4,7 +4,9 @@ import Dropzone from 'react-dropzone';
 
 export default class CreatePost extends Component {
 	static propTypes = {
-		onCreate: PropTypes.func.isRequired
+		onCreate: PropTypes.func.isRequired,
+		onCancel: PropTypes.func.isRequired,
+		currentUser: PropTypes.object.isRequired
 	}
 
 	constructor(props){
@@ -23,10 +25,13 @@ export default class CreatePost extends Component {
     this.setState({preview: file.preview});
     this.file = file;
   	}
-
+	clickHandler(){
+		let {onCancel} = this.props
+		onCancel(this.props.currentUser)
+	}
 	render() {
 	let { preview } = this.state;
-	let { onCreate } = this.props;
+	let { onCreate, onCancel } = this.props;
 		return(
 		<div>
 			<h1>Create Post</h1>
@@ -42,7 +47,7 @@ export default class CreatePost extends Component {
 				</label>
 			</SimpleSerialForm>
 
-			<button>Cancel</button>
+			<button onClick={::this.clickHandler}>Cancel</button>
 		</div>
 		)
 	}

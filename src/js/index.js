@@ -88,7 +88,10 @@ function renderDashboard(user){
 //Renders the page that allows you to create a new post//
 function renderCreate(){
   render(
-    <CreatePost onCreate={createAndRender}/>
+    <CreatePost
+    currentUser={Cookies.getJSON('currentUser')}
+    onCreate={createAndRender}
+    onCancel={renderDashboard}/>
     ,document.querySelector('.app')
   )
 }
