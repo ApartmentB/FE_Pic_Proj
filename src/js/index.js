@@ -116,7 +116,7 @@ function renderDashboard(user){
   )}
 //Test Function for getting all users//
 function getUsers(){
-  ajax('https://tranquil-garden-21235.herokuapp.com/').then((data)=> console.log(data))
+  ajax('https://tranquil-garden-21235.herokuapp.com/post').then((data)=> console.log(data))
 }
 //Renders the page that allows you to create a new post//
 function renderCreate(){

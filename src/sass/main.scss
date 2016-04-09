@@ -26,7 +26,7 @@ h1, h2{
 
 h3{
 	color: black;
-	margin: 15px; 
+	margin: 15px;
 	font-family: Helvetica;
 	font-size: 1.5em;
 	letter-spacing: 1.5px;
@@ -149,4 +149,8 @@ footer{
 	flex-direction: row;
 	align-items: center;
     justify-content: space-around;
+}
+//Post Details
+.unsolved {
+	opacity: 0;
 }
