@@ -9,7 +9,7 @@ export default class PostFeed extends Component {
     let {onSelect} = this.props
     return (<li key={post.imgURL} onClick={onSelect.bind(null, post)}>
            <img src={post.imgURL} alt={post.caption}/>
-           {post.status}
+           {post.solved}
            </li>
          )
        }
