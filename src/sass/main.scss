@@ -3,6 +3,7 @@
 // @import 'font-awesome/scss/font-awesome';
 
 $pomegranate: #ED4121;
+$light-pom: lighten($pomegranate, 5%);
 $tumbleweed: #DEA68A;
 $almond: #F1D6C6;
 $white-lilac: #E8E6E9;
@@ -84,7 +85,7 @@ p{
 	}
 }
 ////////set standard headers///////
-.reg-ssf, .logged-in-header{
+.reg-ssf{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -101,7 +102,8 @@ p{
 
 ///centered header///
 .create-post-header, .post-det-header,
-.reg-header, .feed-header, .scoreboard-header{
+.reg-header, .feed-header, .scoreboard-header, 
+.logged-in-header{
 	flex-direction: column;
 	height: 85px;
 	background-color: $rich-black;
@@ -140,6 +142,15 @@ p{
 	letter-spacing: 1px;
 	&:hover{
 		font-size: 1.35em;
+		background-color: black;
+		border: 2.5px solid black;
+	}
+}
+
+#submit-post, #submit-guess, #submit-reg{
+	&:hover{
+	background-color: $pomegranate;
+	border: 2.5px solid $pomegranate;
 	}
 }
 ////////Black HOVER/////////////////
@@ -149,6 +160,9 @@ p{
 	background-color: black;
 	border: 2.5px solid white;
 }
+}
+.black-btn{
+	margin: 15px 15px 0px 15px;
 }
 /////////////////////////////////////
 /////////////////////////////////////
@@ -202,7 +216,7 @@ p{
 	width: 100%;
 	margin: 55px auto;
 	padding: 25px;
-	background-color: lighten($pomegranate, 5%);
+	background-color: $light-pom;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -305,18 +319,25 @@ footer{
 	font-size: 0.75em;
 }
 ////////////Dashboard/////////////////
+.logged-in-header{
+	h3{text-align:left;}
+	h1{text-align: center;}
+}
 .standard-body{
 	display: flex;
 	flex-direction: row;
 	aside{
 		width: 20%;
+		background-color: $light-pom;
+		display: flex;
+		flex-direction: column;
 	}
 }
 ////////////Create Post/////////////////
 .create-body{
 
 }
-
+////////////Post Feed///////////////////
 //Post Details
 .unsolved {
 	opacity: 0;

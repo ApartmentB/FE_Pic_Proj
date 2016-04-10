@@ -54,7 +54,7 @@ export default class CreatePost extends Component {
 							<input type="text" name="caption"/>
 						</div>
 
-						<button className="btn drop-btn">
+						<button className="btn drop-btn" id="submit-post">
 							Submit
 						</button>
 

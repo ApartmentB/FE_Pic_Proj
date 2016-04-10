@@ -30,7 +30,7 @@ export default class Scoreboard extends Component {
         <ol>
           {users.map(::this.makeScoreBoard)}
         </ol>
-        <button onClick={::this.clickHandler}>Back</button>
+        <button className="btn drop-btn" onClick={::this.clickHandler}>Back</button>
       </div>
     );
   }

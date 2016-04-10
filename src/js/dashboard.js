@@ -15,14 +15,14 @@ export default class Dashboard extends Component {
         <div className="logged-in-header">
           <h3><span>Hello</span> {authUser.user_name}!</h3>
           <h1>My Dashboard</h1>
-          <button onClick={onMake}>New Post</button>
         </div>
         
         <div className="standard-body">
           <aside>
-            <button onClick={onScoreBoard}>Scoreboard</button>
-            <button onClick={onLogOut}>Log Out</button>
-            <button onClick={onUsers}>Get All Users</button>
+            <button className="btn black-btn" id="btn-login" onClick={onMake}>New Post</button>
+            <button className="btn black-btn" id="btn-login" onClick={onScoreBoard}>Scoreboard</button>
+            <button className="btn black-btn" id="btn-login" onClick={onUsers}>Get All Users</button>
+            <button className="btn black-btn" id="btn-login" onClick={onLogOut}>Log Out</button>
           </aside>
           <div className="main">
             {children}
@@ -30,7 +30,7 @@ export default class Dashboard extends Component {
         </div>
         
         <div className="standard-footer">
-          &copy, Hint Pic 2016
+          &copy; Hint Pic 2016
         </div>
       </div>
     );

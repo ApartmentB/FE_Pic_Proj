@@ -30,8 +30,6 @@ export default class PostDetails extends Component {
         <div className="post-det-header">
           <h1>Guess The Caption</h1>
         </div>
-
-        <button onClick={::this.clickHandler}>Back</button>
         
         <img src={post.imgURL} alt={post.title}/>
         
@@ -40,12 +38,14 @@ export default class PostDetails extends Component {
         
         <SimpleSerialForm onData={::this.dataHandler}>
           <input type='text' placeholder='Take a guess!' name='guess'/>
-          <button>Submit</button>
+          <button className="btn drop-btn" id="submit-guess">Submit</button>
         </SimpleSerialForm>
         
         <div>
           <h1 className='status'></h1>
         </div>
+
+        <button className="btn drop-btn" onClick={::this.clickHandler}>Back</button>
 
       </div>
 
