@@ -22,9 +22,9 @@ export default class Scoreboard extends Component {
     let {users, onBack} = this.props;
     return (
       <div>
-        <ul>
+        <ol>
           {users.map(::this.makeScoreBoard)}
-        </ul>
+        </ol>
         <button onClick={::this.clickHandler}>Back</button>
       </div>
     );
