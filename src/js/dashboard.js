@@ -13,7 +13,7 @@ export default class Dashboard extends Component {
       <div>
 
         <div className="logged-in-header">
-          <h3><span>Hello</span> {authUser.user_name}!</h3>
+          <h3><span>Welcome back,</span> {authUser.user_name}!</h3>
           <h1>My Dashboard</h1>
         </div>
         

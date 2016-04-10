@@ -42,7 +42,7 @@ export default class Register extends Component {
             <div id="reg-text-area">
             <label>
               Username:
-              n <input type='text' name='user_name'/>
+              <input type='text' name='user_name'/>
             </label>
             </div>
 

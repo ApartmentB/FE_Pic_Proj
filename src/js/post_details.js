@@ -32,14 +32,18 @@ export default class PostDetails extends Component {
           <h1>Guess The Caption</h1>
         </div>
 
-        <img src={post.imgURL} alt={post.title}/>
-        <label htmlFor='guess'><h2>Type here:</h2></label>
-        <h2 className='caption unsolved'>{post.caption}</h2>
+        <div className="post-det-body">
+          <img src={post.imgURL} alt={post.title}/>
+          <label htmlFor='guess'><h2>Type here:</h2></label>
+          <h2 className='caption unsolved'>{post.caption}</h2>
+        </div>
 
-        <SimpleSerialForm onData={::this.dataHandler}>
-          <input id='guess' type='text' placeholder='Take a guess!' name='guess'/>
-          <button className="btn drop-btn" id="submit-guess">Submit</button>
-        </SimpleSerialForm>
+        <div className="post-det-form">
+          <SimpleSerialForm onData={::this.dataHandler}>
+            <input id='guess' type='text' placeholder='Take a guess!' name='guess'/>
+            <button className="btn drop-btn" id="submit-guess">Submit</button>
+          </SimpleSerialForm>
+        </div>
 
         <div>
           <h1 className='status'></h1>

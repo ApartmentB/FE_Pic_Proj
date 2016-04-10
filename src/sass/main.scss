@@ -68,18 +68,21 @@ p{
 ////////ROW CENTER///////////////////
 .hintpic, .create-post-header,
 .post-det-header, .reg-header, 
-.feed-header, .scoreboard-header{
+.scoreboard-header{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
 ////////COLUMN CENTER//////////////
-.create-body, .reg-body{
+.create-body, .reg-body, 
+.feed-header{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin: 25px;
-	.drop-img, .drop-caption,
+	margin-top: 50px;
+	margin-bottom: 75px;
+	.drop-img,
 	.drop-btn{
 		margin: 15px 10px;
 	}
@@ -95,9 +98,12 @@ p{
 ///////////////////////////////////
 //////Header details///////////////
 .reg-ssf, .logged-in-header{
-	height: 75px;
+	height: 125px;
 	background-color: $rich-black;
 	justify-content: space-between
+}
+.reg-ssf{
+	height: 60px;
 }
 
 ///centered header///
@@ -105,7 +111,7 @@ p{
 .reg-header, .feed-header, .scoreboard-header, 
 .logged-in-header{
 	flex-direction: column;
-	height: 85px;
+	height: 105px;
 	background-color: $rich-black;
 	justify-content: center;
 }
@@ -125,7 +131,6 @@ p{
 	padding: 15px;
 	font-size: 1.9em;
 	letter-spacing: 1.5px;
-	// text-shadow: 1px 1px 1px $rich-black;
 	border: 3px solid lighten($rich-black, 15%);
 	border-radius: 5px;
 	 &:hover{
@@ -246,8 +251,7 @@ p{
 	}
 }
 
-.fast-to-join{
-	// border: 1px solid red;
+.fast-to-join{;
 	margin: 0 auto;
 	display: inline-block;
 	display: flex;
@@ -267,7 +271,6 @@ p{
 }
 
 footer{
-	// border: 1px solid red;
 	position: relative;
 	height: 400px;
 	padding-top: 55px;
@@ -276,7 +279,6 @@ footer{
 	font-family: Helvetica;
 	font-size: 12px;
     .foot-box{
-	// border: 1px solid red;
 	width: 90%;
 	margin: 0 auto;
 	display: flex;
@@ -284,7 +286,6 @@ footer{
 	flex-wrap: wrap;
     justify-content: space-around;
     	.foot{
-    	// border: 1px solid red;
     	width: 10%;
     	p{
     	margin-bottom:14px;
@@ -312,8 +313,8 @@ footer{
 }
 
 .standard-footer{
-	height: 100px;
-	padding-top: 55px;
+	height: 145px;
+	padding-top: 115px;
 	text-align: center;
 	background-color: $rich-black;
 	color: gray;
@@ -333,9 +334,23 @@ footer{
 }
 ////////////Dashboard/////////////////
 .logged-in-header{
-	h3{text-align:left;}
-	h1{text-align: center;}
+	h3{
+		text-align:right;
+		font-size: .9em;
+		font-family: Arial, sans-serif;
+		font-weight: lighter;
+		color: white;
+		padding-top: 7px;
+		padding-right: 7px;
+	}
+	h1{
+		text-align: center;
+		margin: 0;
+		padding: 0;
+		line-height: 50px;
+	}
 }
+
 .standard-body{
 	display: flex;
 	flex-direction: row;
@@ -345,16 +360,31 @@ footer{
 		display: flex;
 		flex-direction: column;
 	}
+	.main{
+			margin: 30px;
+	}
 }
 ////////////Create Post/////////////////
 .create-body{
-
+		// border: 1px solid blue;
+	.drop-caption{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.caption-text{
+		div input{
+			width: 200px;
+		}
+	
+}
+}
 }
 ////////////Scoreboard///////////////////
 .scoreboard{
 	// border: 1px solid red;
 	ol{
-		height: 400px;
+		height: 300px;
 		margin: 35px;
 		border: 1.5px solid $rich-black;
 		border-radius: 10px;
@@ -371,6 +401,7 @@ footer{
 	// border: 1px solid blue;
 	.reg-prompt{
 	font-size: .8em;
+	margin-bottom: 35px;
 	}
 	div{
 		// border: 1px solid blue;
@@ -387,7 +418,6 @@ footer{
 				// font-weight: lighter;
 			}
 			input{margin-left:10px;}
-
 		}
 	}
 }
@@ -395,8 +425,55 @@ footer{
 		margin-left: 15px;
 		margin-bottom: 15px;
 	}
+////////////Post Details/////////////
+.post-det-header{
+border: 1px solid blue;
+}
+.post-det-body{
+border: 1px solid red;
+display: inline-block;
+text-align: center;
+	h2{
+		font-size: 1.5em;
+		font-family: 'Arimo', sans-serif;
+	}
+}
+.post-det-form{
+border: 1px solid pink;
+}
+///////////Post Feed///////////////
+.feed-header{
+		background-color: gray;
+		border: none;
+		height: 70px;
+		h1{
+			font-size: 1.8em;
+			font-family: 'Pacifico', cursive;
+			letter-spacing: 1.5px;
+			color: black;
+		}
+}
+
+.posts-array{
+	list-style: none;
+	margin-bottom: 75px;
+	div{
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	img{
+		list-style: none;
+		height: 195px;
+		margin: 25px;
+	}
+	}
+}
+
+
 //Post Details
 .unsolved {
 	opacity: 0;
 }
+
 

@@ -50,8 +50,12 @@ export default class CreatePost extends Component {
 
 					<label>
 						<div className="drop-caption">
-							Caption:
+							<div className="caption-text">
+								<p>Your original caption:</p>
+							</div>
+							<div>
 							<input type="text" name="caption"/>
+							</div>
 						</div>
 
 						<button className="btn drop-btn" id="submit-post">

@@ -23,7 +23,9 @@ export default class PostFeed extends Component {
           <h1>All Posts</h1>
         </div>
 
+        <div className="posts-array">
         <div>{posts.map(::this.populate)}</div>
+        </div>
 
       </div>
 
