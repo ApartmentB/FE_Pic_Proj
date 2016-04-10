@@ -114,6 +114,9 @@ export default class Home extends Component {
 						</div>
 					</div>
 
+					<div className="home-copyright">
+					&copy; Hint Pic 2016
+					</div>
 				</footer>
 			</div>
 		);

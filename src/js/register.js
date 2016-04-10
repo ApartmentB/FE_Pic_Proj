@@ -37,6 +37,11 @@ export default class Register extends Component {
           <button className="btn drop-btn" id="submit-reg">Register</button>
         </SimpleSerialForm>
         <button className="btn drop-btn" onClick={onBack}>Back</button>
+      
+      <div className="standard-footer">
+          &copy; Hint Pic 2016
+        </div>
+
       </div>
     );
   }

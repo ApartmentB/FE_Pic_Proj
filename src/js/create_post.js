@@ -69,6 +69,9 @@ export default class CreatePost extends Component {
 
 			</div>
 
+			<div className="standard-footer">
+          	&copy; Hint Pic 2016
+        	</div>
 			
 		</div>
 		)
