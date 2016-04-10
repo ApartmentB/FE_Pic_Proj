@@ -16,9 +16,17 @@ export default class PostFeed extends Component {
   render() {
     let {posts} = this.props;
     return (
+
       <div>
-        {posts.map(::this.populate)}
+
+        <div className="feed-header">
+          <h1>All Posts</h1>
+        </div>
+
+        <div>{posts.map(::this.populate)}</div>
+
       </div>
+
     );
   }
 }

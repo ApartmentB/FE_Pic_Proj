@@ -33,7 +33,9 @@ h3, h4{
 	text-align: center;
 }
 /////////Standard Titles/////////////
-.create-post-header{
+.create-post-header, .post-det-header,
+.reg-header, .feed-header, .logged-in-header, 
+.scoreboard-header{
 	h1{
 		font-size: 2.5em;
 		letter-spacing: 0px;
@@ -46,7 +48,7 @@ h3, h4{
  background-color: lighten($rich-black, 35%);
  text-decoration:none;
  border: none;
- // margin: 20px 20px;
+ // margin: 10px;
  padding: 5px 10px;
  border: 2.5px solid white;
  border-radius:4px;
@@ -63,7 +65,9 @@ p{
 ////////////Homepage/////////////////
 ////////Set Logged In Standards here/
 ////////ROW CENTER///////////////////
-.hintpic, .create-post-header{
+.hintpic, .create-post-header,
+.post-det-header, .reg-header, 
+.feed-header, .scoreboard-header{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -76,7 +80,7 @@ p{
 	margin: 25px;
 	.drop-img, .drop-caption,
 	.drop-btn{
-		margin: 15px 0;
+		margin: 15px 10px;
 	}
 }
 ////////set standard headers///////
@@ -89,11 +93,26 @@ p{
 }
 ///////////////////////////////////
 //////Header details///////////////
-.reg-ssf, .logged-in-header, 
-.create-post-header{
+.reg-ssf, .logged-in-header{
 	height: 75px;
 	background-color: $rich-black;
 	justify-content: space-between
+}
+
+///centered header///
+.create-post-header, .post-det-header,
+.reg-header, .feed-header, .scoreboard-header{
+	flex-direction: column;
+	height: 85px;
+	background-color: $rich-black;
+	justify-content: center;
+}
+.feed-header{
+	border: 5px solid white;
+	border-radius: 10px;
+	margin: 15px;
+	h1{letter-spacing: 3px;
+	}
 }
 
 ////////B U T T O N S/////////////
@@ -109,8 +128,9 @@ p{
 	border-radius: 5px;
 	 &:hover{
 	color: white;
+	font-size: 1.95em;
 	background-color: $pomegranate;
-	border: 3px solid black;
+	border: 3px solid $rich-black;
 }
 }
 
@@ -118,6 +138,9 @@ p{
 	padding: 5px;
 	font-size: 1.3em;
 	letter-spacing: 1px;
+	&:hover{
+		font-size: 1.35em;
+	}
 }
 ////////Black HOVER/////////////////
 #btn-login{

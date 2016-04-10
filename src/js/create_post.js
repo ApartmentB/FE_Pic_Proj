@@ -37,7 +37,6 @@ export default class CreatePost extends Component {
 
 			<div className="create-post-header">
 				<h1>Create New Post</h1>
-				<button onClick={::this.clickHandler}>Cancel</button>
 			</div>
 
 			<div className="create-body">
@@ -58,9 +57,16 @@ export default class CreatePost extends Component {
 						<button className="btn drop-btn">
 							Submit
 						</button>
+
+						<button 
+							className="btn drop-btn"
+							onClick={::this.clickHandler}>
+							Cancel
+						</button>
 						
 					</label>
 				</SimpleSerialForm>
+
 			</div>
 
 			

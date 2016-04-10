@@ -26,17 +26,27 @@ export default class PostDetails extends Component {
     let {post, onBack} = this.props;
     return (
       <div>
+
+        <div className="post-det-header">
+          <h1>Guess The Caption</h1>
+        </div>
+
         <button onClick={::this.clickHandler}>Back</button>
+        
         <img src={post.imgURL} alt={post.title}/>
-        <h2>Guess the caption:</h2>
+        
+        <h2>Type here:</h2>
         <h2 className='caption unsolved'>{post.caption}</h2>
+        
         <SimpleSerialForm onData={::this.dataHandler}>
           <input type='text' placeholder='Take a guess!' name='guess'/>
-          <button>GUESS</button>
+          <button>Submit</button>
         </SimpleSerialForm>
+        
         <div>
           <h1 className='status'></h1>
         </div>
+
       </div>
 
     );

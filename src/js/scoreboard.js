@@ -22,6 +22,11 @@ export default class Scoreboard extends Component {
     let {users, onBack} = this.props;
     return (
       <div>
+
+      <div className="scoreboard-header">
+        <h1>Scoreboard</h1>
+      </div>
+
         <ol>
           {users.map(::this.makeScoreBoard)}
         </ol>

@@ -12,6 +12,11 @@ export default class Register extends Component {
     let { onRegister, onBack } = this.props;
     return (
       <div>
+
+        <div className="reg-header">
+        <h1>Register</h1>
+        </div>
+        
         <SimpleSerialForm onData={ onRegister }>
           <label>
             Full Name:
