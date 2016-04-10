@@ -34,20 +34,36 @@ export default class CreatePost extends Component {
 	let { onCreate, onCancel } = this.props;
 		return(
 		<div>
-			<h1>Create Post</h1>
 
-			<SimpleSerialForm onData={ ::this.dataHandler }>
-				<Dropzone onDrop={ ::this.dropHandler }>
-					<img src={ preview } height="195px" width="195px"/>
-				</Dropzone>
-				<label>
-					Caption:
-					<input type="text" name="caption"/>
-					<button>Create</button>
-				</label>
-			</SimpleSerialForm>
+			<div className="create-post-header">
+				<h1>Create New Post</h1>
+				<button onClick={::this.clickHandler}>Cancel</button>
+			</div>
 
-			<button onClick={::this.clickHandler}>Cancel</button>
+			<div className="create-body">
+				<SimpleSerialForm onData={ ::this.dataHandler }>
+
+					<div className="drop-img">
+						<Dropzone onDrop={ ::this.dropHandler }>
+							<img src={ preview } height="195px" width="195px"/>
+						</Dropzone>
+					</div>
+
+					<label>
+						<div className="drop-caption">
+							Caption:
+							<input type="text" name="caption"/>
+						</div>
+
+						<button className="btn drop-btn">
+							Submit
+						</button>
+						
+					</label>
+				</SimpleSerialForm>
+			</div>
+
+			
 		</div>
 		)
 	}

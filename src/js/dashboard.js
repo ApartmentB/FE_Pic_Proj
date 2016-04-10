@@ -11,14 +11,26 @@ export default class Dashboard extends Component {
     let {authUser, onLogOut, onMake, onUsers, onScoreBoard, children} = this.props;
     return (
       <div>
-        <h3>Hello {authUser.user_name}!</h3>
-        <aside>
-        <button onClick={onMake}>Make A Post</button>
-        <button onClick={onScoreBoard}>Scoreboard</button>
-        </aside>
-        {children}
-        <button onClick={onLogOut}>Log Out</button>
-        <button onClick={onUsers}>Get All Users</button>
+
+        <div className="logged-in-header">
+          <h3><span>Hello</span> {authUser.user_name}!</h3>
+          <button onClick={onMake}>New Post</button>
+        </div>
+        
+        <div className="standard-body">
+          <aside>
+            <button onClick={onScoreBoard}>Scoreboard</button>
+            <button onClick={onLogOut}>Log Out</button>
+            <button onClick={onUsers}>Get All Users</button>
+          </aside>
+          <div className="main">
+            {children}
+          </div>
+        </div>
+        
+        <div className="standard-footer">
+          &copy, Hint Pic 2016
+        </div>
       </div>
     );
   }

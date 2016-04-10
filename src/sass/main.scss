@@ -17,7 +17,7 @@ $rich-black: lighten(black, 25%);
 	padding: 0;
 	box-sizing: border-box;
 }
-
+/////////Homepage Titles/////////////
 h1, h2{
 	color: darken($pomegranate, 10%);
 	font-family: 'Pacifico', cursive;
@@ -25,7 +25,6 @@ h1, h2{
 	letter-spacing: 5px;
 	margin: 15px;
 }
-
 h3, h4{
 	color: black;
 	font-family: 'Arimo', sans-serif;
@@ -33,7 +32,15 @@ h3, h4{
 	letter-spacing: .25px;
 	text-align: center;
 }
+/////////Standard Titles/////////////
+.create-post-header{
+	h1{
+		font-size: 2.5em;
+		letter-spacing: 0px;
+	}
+}
 
+/////////////////////////////////////
 .btn {
  color: white;
  background-color: lighten($rich-black, 35%);
@@ -53,22 +60,45 @@ p{
 	font-size: 1.3em;
 	margin: 15px 15px;
 }
-
-//Homepage
-.hintpic{
+////////////Homepage/////////////////
+////////Set Logged In Standards here/
+////////ROW CENTER///////////////////
+.hintpic, .create-post-header{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
-.reg-ssf{
+////////COLUMN CENTER//////////////
+.create-body{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 25px;
+	.drop-img, .drop-caption,
+	.drop-btn{
+		margin: 15px 0;
+	}
+}
+////////set standard headers///////
+.reg-ssf, .logged-in-header{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-content: flex-end;
 	align-items: center;
 }
+///////////////////////////////////
+//////Header details///////////////
+.reg-ssf, .logged-in-header, 
+.create-post-header{
+	height: 75px;
+	background-color: $rich-black;
+	justify-content: space-between
+}
 
-#btn-reg{
+////////B U T T O N S/////////////
+////////RED HOVER/////////////////
+#btn-reg, .drop-btn{
 	color: white;
 	margin: 25px 0 65px 0;
 	padding: 15px;
@@ -84,6 +114,12 @@ p{
 }
 }
 
+.drop-btn{
+	padding: 5px;
+	font-size: 1.3em;
+	letter-spacing: 1px;
+}
+////////Black HOVER/////////////////
 #btn-login{
 	margin-right: 20px;
 	 &:hover{
@@ -91,15 +127,11 @@ p{
 	border: 2.5px solid white;
 }
 }
-
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
 .hintpic{
 	 justify-content: space-around;
-}
-
-.reg-ssf{
-	height: 75px;
-	background-color: $rich-black;
-	justify-content: space-between
 }
 
 .SSF{
@@ -239,6 +271,27 @@ footer{
     	}
     	}
     }
+}
+
+.standard-footer{
+	height: 100px;
+	padding-top: 55px;
+	background-color: $rich-black;
+	color: gray;
+	font-family: Helvetica;
+	font-size: 0.75em;
+}
+////////////Dashboard/////////////////
+.standard-body{
+	display: flex;
+	flex-direction: row;
+	aside{
+		width: 20%;
+	}
+}
+////////////Create Post/////////////////
+.create-body{
+
 }
 
 //Post Details
