@@ -34,9 +34,9 @@ export default class Register extends Component {
             Password:
             <input type='password' name='password'/>
           </label>
-          <button>Register</button>
+          <button className="btn drop-btn" id="submit-reg">Register</button>
         </SimpleSerialForm>
-        <button onClick={onBack}>Back</button>
+        <button className="btn drop-btn" onClick={onBack}>Back</button>
       </div>
     );
   }
