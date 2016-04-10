@@ -108,9 +108,9 @@ export default class Home extends Component {
 						
 						<div className="foot" id="Connect">
 						<h4>FOLLOW</h4>
-						<i class="fa fa-facebook"></i><p>Facebook</p>
-						<i class="fa fa-twitter"></i><p>Twitter</p>
-						<i class="fa fa-pinterest-p"></i><p>Pinterest</p>
+						<i className="fa fa-facebook"></i><p>Facebook</p>
+						<i className="fa fa-twitter"></i><p>Twitter</p>
+						<i className="fa fa-pinterest-p"></i><p>Pinterest</p>
 						</div>
 					</div>
 
