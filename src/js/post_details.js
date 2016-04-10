@@ -7,6 +7,7 @@ export default class PostDetails extends Component {
     post: PropTypes.object,
     onBack: PropTypes.func.isRequired,
     currentUser: PropTypes.object.isRequired,
+    onDelete: PropTypes.func.isRequired
   }
   clickHandler(){
     let {onBack, currentUser} = this.props
@@ -23,8 +24,12 @@ export default class PostDetails extends Component {
           $('.status').html('GUESS AGAIN!')
     }else { $('.status').html('')}
   }
+  deleteHandler(){
+    let {onDelete, post} = this.props
+    onDelete(post)
+  }
   render() {
-    let {post, onBack} = this.props;
+    let {post, onBack, onDelete} = this.props;
     return (
       <div>
 
@@ -50,6 +55,7 @@ export default class PostDetails extends Component {
         </div>
         <button onClick={x=>x}>Next Pic</button>
         <button className="btn drop-btn" onClick={::this.clickHandler}>Back</button>
+        <button className='btn delete-btn' onClick={::this.deleteHandler}>Delete</button>
 
       </div>
 

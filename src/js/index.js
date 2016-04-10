@@ -164,9 +164,21 @@ function renderPost(clickedPost){
   <PostDetails
   post={clickedPost}
   onBack={renderDashboard}
-  currentUser={currentUser}/>
+  currentUser={currentUser}
+  onDelete={deletePost}/>
   ,document.querySelector('.app')
 )}
+//Deletes post if the user that created the post is signed in//
+function deletePost(post){
+  console.log(currentUser.auth_token)
+  ajax({
+    url: `tranquil-garden-21235.herokuapp.com/posts/:${post.id}`,
+    type: 'DELETE',
+    headers:{
+      'auth_token': currentUser.auth_token
+    }
+  })
+}
 //Sends the registration info to the back end to add the user to the data base//
 //Logs in the user that just registered and renders the Dashboard with the user//
 function regAndRender(user){
