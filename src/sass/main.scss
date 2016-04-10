@@ -268,6 +268,7 @@ p{
 
 footer{
 	// border: 1px solid red;
+	position: relative;
 	height: 400px;
 	padding-top: 55px;
 	background-color: $rich-black;
@@ -313,10 +314,22 @@ footer{
 .standard-footer{
 	height: 100px;
 	padding-top: 55px;
+	text-align: center;
 	background-color: $rich-black;
 	color: gray;
 	font-family: Helvetica;
 	font-size: 0.75em;
+}
+.home-copyright{
+	position: absolute;
+	bottom: 5%;
+	right: 46%;
+	// border: 1px solid red;
+	margin: 0 auto;
+	text-align: center;
+	// position: absolute;
+	// right: 5px;
+	// bottom: 0px;
 }
 ////////////Dashboard/////////////////
 .logged-in-header{
@@ -337,7 +350,22 @@ footer{
 .create-body{
 
 }
-////////////Post Feed///////////////////
+////////////Scoreboard///////////////////
+.scoreboard{
+	// border: 1px solid red;
+	ol{
+		height: 400px;
+		margin: 35px;
+		border: 1.5px solid $rich-black;
+		border-radius: 10px;
+	}
+	#score-back{
+		// border: 1px solid red;
+		margin-left: 35px;
+
+	}
+}
+
 //Post Details
 .unsolved {
 	opacity: 0;

@@ -21,16 +21,22 @@ export default class Scoreboard extends Component {
   render() {
     let {users, onBack} = this.props;
     return (
-      <div>
+      <div className="scoreboard">
 
-      <div className="scoreboard-header">
-        <h1>Scoreboard</h1>
-      </div>
+        <div className="scoreboard-header">
+          <h1>Scoreboard</h1>
+        </div>
 
         <ol>
           {users.map(::this.makeScoreBoard)}
         </ol>
-        <button className="btn drop-btn" onClick={::this.clickHandler}>Back</button>
+
+        <button className="btn drop-btn" id="score-back" onClick={::this.clickHandler}>Back</button>
+      
+        <div className="standard-footer">
+          &copy; Hint Pic 2016
+        </div>
+
       </div>
     );
   }
