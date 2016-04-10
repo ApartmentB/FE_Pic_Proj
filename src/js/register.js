@@ -17,30 +17,56 @@ export default class Register extends Component {
         <h1>Register</h1>
         </div>
         
-        <SimpleSerialForm onData={ onRegister }>
-          <label>
-            Full Name:
-            <input type='text' name='full_name'/>
-          </label>
-          <label>
-            Email:
-            <input type='email' name='email'/>
-          </label>
-          <label>
-            Username:
-            <input type='text' name='user_name'/>
-          </label>
-          <label>
-            Password:
-            <input type='password' name='password'/>
-          </label>
-          <button className="btn drop-btn" id="submit-reg">Register</button>
-        </SimpleSerialForm>
-        <button className="btn drop-btn" onClick={onBack}>Back</button>
-      
-      <div className="standard-footer">
-          &copy; Hint Pic 2016
-        </div>
+        <div className="reg-body">
+          <div className="reg-prompt">
+          <p>Sign-up is instant. Create your profile and start sharing pics.</p>
+          </div>
+
+          <div className="reg-form">
+          <SimpleSerialForm onData={ onRegister }>
+            
+            <div id="reg-text-area">
+            <label>
+              <span>Full Name:</span>
+              <input type='text' name='full_name'/>
+            </label>
+            </div>
+
+            <div id="reg-text-area">
+            <label>
+              Email:
+              <input type='email' name='email'/>
+            </label>
+            </div>
+
+            <div id="reg-text-area">
+            <label>
+              Username:
+              n <input type='text' name='user_name'/>
+            </label>
+            </div>
+
+            <div id="reg-text-area">
+            <label>
+              Password:
+              <input type='password' name='password'/>
+            </label>
+            </div>
+
+            <div>
+            <button className="btn drop-btn" id="submit-reg">Register</button>
+            </div>
+          </SimpleSerialForm>
+          </div>
+      </div>
+
+          <div>
+          <button className="btn drop-btn" id="reg-back" onClick={onBack}>Back</button>
+          </div>
+
+          <div className="standard-footer">
+              &copy; Hint Pic 2016
+          </div>
 
       </div>
     );
