@@ -35,6 +35,7 @@ export default class CreatePost extends Component {
 		return(
 		<div>
 
+		<div className="create-border">
 			<div className="create-post-header">
 				<h1>Create New Post</h1>
 			</div>
@@ -70,8 +71,8 @@ export default class CreatePost extends Component {
 						
 					</label>
 				</SimpleSerialForm>
-
 			</div>
+		</div>
 
 			<div className="standard-footer">
           	&copy; Hint Pic 2016
