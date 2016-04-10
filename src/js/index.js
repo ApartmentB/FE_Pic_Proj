@@ -161,7 +161,8 @@ function renderPost(clickedPost){
   <PostDetails
   post={clickedPost}
   onBack={renderDashboard}
-  currentUser={currentUser}/>
+  currentUser={currentUser}
+  onNextPic={renderPost}/>
   ,document.querySelector('.app')
 )}
 //Sends the registration info to the back end to add the user to the data base//

@@ -7,6 +7,7 @@ export default class PostDetails extends Component {
     post: PropTypes.object,
     onBack: PropTypes.func.isRequired,
     currentUser: PropTypes.object.isRequired,
+    onNextPic: PropTypes.func.isRequired
   }
   clickHandler(){
     let {onBack, currentUser} = this.props
@@ -22,6 +23,10 @@ export default class PostDetails extends Component {
         $('.status').html('')){
           $('.status').html('GUESS AGAIN!')
     }else { $('.status').html('')}
+  }
+  nextPickHandler(){
+    let { onNextPic } = this.props;
+    onNextPic()
   }
   render() {
     let {post, onBack} = this.props;
@@ -48,7 +53,7 @@ export default class PostDetails extends Component {
         <div>
           <h1 className='status'></h1>
         </div>
-        <button onClick={x=>x}>Next Pic</button>
+        <button onClick={::this.nextPicHandler}>Next Pic</button>
         <button className="btn drop-btn" onClick={::this.clickHandler}>Back</button>
 
       </div>
