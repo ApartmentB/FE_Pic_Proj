@@ -1,10 +1,12 @@
 /* CSS Entry Point */
 @import 'normalize';
 // @import 'font-awesome/scss/font-awesome';
+
 $pomegranate: #ED4121;
 $tumbleweed: #DEA68A;
 $almond: #F1D6C6;
 $white-lilac: #E8E6E9;
+$rich-black: lighten(black, 25%);
 
 .app{
 	background: $white-lilac;
@@ -21,20 +23,20 @@ h1, h2{
 	font-family: 'Pacifico', cursive;
 	font-size: 5.7em;
 	letter-spacing: 5px;
-	margin: 1n5px;
+	margin: 15px;
 }
 
-h3{
+h3, h4{
 	color: black;
-	margin: 15px;
-	font-family: Helvetica;
+	font-family: 'Arimo', sans-serif;
 	font-size: 1.5em;
-	letter-spacing: 1.5px;
+	letter-spacing: .25px;
 	text-align: center;
 }
 
 .btn {
  color: white;
+ background-color: lighten($rich-black, 35%);
  text-decoration:none;
  border: none;
  // margin: 20px 20px;
@@ -47,28 +49,45 @@ h3{
 }
 
 p{
+	font-family: 'Arimo', sans-serif;
+	font-size: 1.3em;
 	margin: 15px 15px;
 }
 
 //Homepage
-.hintpic, .reg-ssf{
+.hintpic{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
+.reg-ssf{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-content: flex-end;
+	align-items: center;
+}
 
 #btn-reg{
-	margin-left: 20px;
+	color: white;
+	margin: 25px 0 65px 0;
+	padding: 15px;
+	font-size: 1.9em;
+	letter-spacing: 1.5px;
+	// text-shadow: 1px 1px 1px $rich-black;
+	border: 3px solid lighten($rich-black, 15%);
+	border-radius: 5px;
 	 &:hover{
-	background-color: black;
-	border: 2.5px solid white;
+	color: white;
+	background-color: $pomegranate;
+	border: 3px solid black;
 }
 }
 
 #btn-login{
 	margin-right: 20px;
 	 &:hover{
-	background-color: darken($pomegranate, 10%);
+	background-color: black;
 	border: 2.5px solid white;
 }
 }
@@ -79,7 +98,7 @@ p{
 
 .reg-ssf{
 	height: 75px;
-	background-color: lighten(black, 25%);
+	background-color: $rich-black;
 	justify-content: space-between
 }
 
@@ -113,7 +132,7 @@ p{
 	align-items: center;
     justify-content: space-between;
 		img{
-		border: 7px solid lighten(black, 30%);
+		border: 7px solid $rich-black;
 		border-radius: 10px;
 		margin: 0 auto;
 		width: 350px;
@@ -125,32 +144,105 @@ p{
 
 .info-box{
 	// border: 1px solid red;
-	width: 700px;
-	margin: 0 auto;
+	width: 100%;
+	margin: 55px auto;
+	padding: 25px;
+	background-color: lighten($pomegranate, 5%);
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	align-items: center;
+	// align-items: center;
     justify-content: space-around;
 	.info{
-		width: 250px;
+		max-width: 20%;
 		// border: 1px solid red;
 		margin: 10px;
+		h4{
+			text-align: center;
+			// margin-bottom: 5px;
+			letter-spacing: -0.5px;
+		}
+		p{
+			font-size: 1em;
+			text-align: justify;
+			color: black;
+			margin: 0;
+			padding: 0;
+		}
+		.divider{
+			height: 10px;
+			border-bottom: 2.5px solid black;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.fast-to-join{
+	// border: 1px solid red;
+	margin: 0 auto;
+	display: inline-block;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	h3{
+		font-size: 2.5em;
+		letter-spacing: -0.5px;
+	}
+	p{
+		margin: 3px;
+	}
+	div{
+		text-align: center;
 	}
 }
 
 footer{
-	height: 200px;
-	background-color: lighten(black, 20%);
+	// border: 1px solid red;
+	height: 400px;
+	padding-top: 55px;
+	background-color: $rich-black;
 	color: white;
 	font-family: Helvetica;
 	font-size: 12px;
+    .foot-box{
+	// border: 1px solid red;
+	width: 90%;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	flex-wrap: wrap;
     justify-content: space-around;
+    	.foot{
+    	// border: 1px solid red;
+    	width: 10%;
+    	p{
+    	margin-bottom:14px;
+    	margin-left: 0;
+    	font-size: 1em;
+    	font-weight: lighter;
+    	color: lighten(gray, 60%);
+    	letter-spacing: -0.2px;
+    	}
+    	h4{
+    	text-align: left;
+    	margin-bottom: 25px;
+    	color: lighten(gray, 40%);
+    	font-weight: lighter;
+    	font-size: 1.2em;
+    	padding:0;	
+    	letter-spacing: -0.5px;
+    	&:hover{
+    		color: white;
+    		font-size: 1.25em;
+    	}
+    	}
+    	}
+    }
 }
+
 //Post Details
 .unsolved {
 	opacity: 0;
 }
+

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import SimpleSerialForm from 'react-simple-serial-form';
 
+
 export default class Home extends Component {
 	static propTypes = {
 		onRegClick: PropTypes.func.isRequired,
@@ -13,7 +14,7 @@ export default class Home extends Component {
 			<div>
 
 				<div className="reg-ssf">
-					<div><button className="btn" id="btn-reg" onClick={ onRegClick }>Register</button></div>
+					
 
 					<div className="SSF">
 						<SimpleSerialForm onData={ onLogIn }>
@@ -31,7 +32,7 @@ export default class Home extends Component {
 									</label>
 								</div>
 
-								<button className="btn" id="btn-login">Log in</button>
+								<button className="btn" id="btn-login">Login</button>
 							</div>
 
 						</SimpleSerialForm>
@@ -43,42 +44,76 @@ export default class Home extends Component {
 					<div><h1>Hint Pic</h1></div>
 				</div>
 
-
 				<div className="hero-image">
-					<img src="http://rifarmsandfood.com/blog/wp-content/uploads/2012/01/Fainting-Goat.jpg"/>
-					<p>Welcome to HintPic, the free forum to post pics, share with 
-					friends, and win points.</p>
+					<img src="http://i.imgur.com/NDcGJiO.jpg"/>
 				</div>
 
-				<h3>About</h3>
 				<div className="info-box">
 					<div className="info">
-						<h4>Story</h4>
-						<p>Photography is the science, art and practice of creating durable images by recording light or other electromagnetic radiation, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film.[1] </p>
+						<h4>Post Pictures</h4>
+						<div className="divider"></div>
+						<p>Upload pictures and caption them in 100 characters or less. Simple. Yes, this is somewhat like Twitter, but we are definitely better. Try it today.</p>
 					</div>
 
 					<div className="info">
-					<h4>Mission</h4>
-						<p>The result with photographic emulsion is an invisible latent image, which is later chemically "developed" into a visible image, either negative or positive depending on the purpose of the photographic material and the method of processing. </p>
+						<h4>Play the Game</h4>
+						<div className="divider"></div>
+						<p>Test your pun prowess against your friends. Can you guess the captions? If yes, you score points.</p>
 					</div>
 
 					<div className="info">
-					<h4>Outreach</h4>
-						<p>The word "photography" was created from the Greek roots φωτός (phōtos), genitive of φῶς (phōs), "light"[2] and γραφή (graphé) "representation by means of lines" or "drawing",[3] together meaning "drawing with light".[4]</p>
+						<h4>Share with Friends</h4>
+						<div className="divider"></div>
+						<p>Share posts with friends and family. Hint Pic games are fun to play in class, on a road trip or when you're waiting in a long line.</p>
 					</div>
 
-					<div className="info">
-					<h4>Connect</h4>
-						<p> Johann von Maedler, a Berlin astronomer, is credited in a 1932 German history of photography as having used it in an article published on 25 February 1839 in the German newspaper Vossische Zeitung.[6] Both of these claims are now widely reported.</p>
-					</div>
+				</div>
+
+				<div className="fast-to-join">
+					<div><h3>Free and fast to join</h3></div>
+					<div><p>Sign-up is instant. Start sharing pics today.</p></div>
+					<div><button className="btn" id="btn-reg" onClick={ onRegClick }>Register</button></div>
 				</div>
 
 				<footer>
-					<div className="Contact">CONTACT</div>
-					<div className="Employment">EMPLOYMENT</div>
-					<div className="Policies">POLICIES</div>
-					<div className="Fair Use">FAIR USE</div>
-					<div className="Share">Share</div>
+
+					<div className="foot-box">
+						<div className="foot" id="Contact">
+						<h4>CONTACT</h4>
+						<p>Business Plaza</p>
+						<p>2828 Peachtree St.</p>
+						<p>Atlanta GA 30303</p>
+						</div>
+
+						<div className="foot" id="Employment">
+						<h4>EMPLOYMENT</h4>
+						<p>All Careers</p>
+						<p>Support Staff</p>
+						<p>Internships</p>
+						</div>
+
+						<div className="foot" id="Policies">
+						<h4>POLICIES</h4>
+						<p>Terms & Conditions</p>
+						<p>Sharing & Fair Use</p>
+						<p>Creative Commons</p>
+						</div>
+
+						<div className="foot" id="Outreach Programs">
+						 <h4>OUTREACH</h4>
+						<p>Mission</p>
+						<p>Fundraising Events</p>
+						<p>Support Us</p>
+						</div>
+						
+						<div className="foot" id="Connect">
+						<h4>FOLLOW</h4>
+						<i class="fa fa-facebook"></i><p>Facebook</p>
+						<i class="fa fa-twitter"></i><p>Twitter</p>
+						<i class="fa fa-pinterest-p"></i><p>Pinterest</p>
+						</div>
+					</div>
+
 				</footer>
 			</div>
 		);
