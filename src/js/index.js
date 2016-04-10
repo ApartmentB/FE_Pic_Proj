@@ -132,24 +132,24 @@ function renderCreate(){
 function createAndRender(postData){
   console.log(currentUser)
   //ajax post to back end//
-  let newPost = new FormData();
-  newPost.append('caption', postData.caption);
-  newPost.append('title', postData.title);
-  newPost.append('file', postData.file);
-  newPost.append('user', currentUser);
+  let post = new FormData();
+  post.append('caption', postData.caption);
+  post.append('title', postData.title);
+  post.append('image', postData.file);
+  // post.append('', )
   ajax({
       url: 'https://tranquil-garden-21235.herokuapp.com/post',
       type: 'POST',
-      data: newPost,
+      data: post,
       cache: false,
       dataType: 'json',
       processData: false,
-      contentType: false,
-      headers: {
-        'auth_token': currentUser.auth_token
-      }
+      contentType: false
+      // headers: {
+      //   'auth_token': currentUser.auth_token
+      // }
     }).then((resp) => {
-      // console.log(resp.user)
+      console.log(resp)
       if (resp.post) {
         renderDashboard(currentUser)
     };
@@ -174,9 +174,8 @@ function regAndRender(user){
   // newUser.append('email', user.email);
   // newUser.append('user_name', user.user_name);
   // newUser.append('password', user.password);
-  // // // NProgress.start();
+  // // NProgress.start();
 
-  console.log('user', user);
 
   ajax({
       url: 'https://tranquil-garden-21235.herokuapp.com/register',
@@ -185,6 +184,7 @@ function regAndRender(user){
       cache: false,
       dataType: 'json',
     }).then((resp) => {
+      console.log('response', resp);
       // console.log(resp.user)
       if (resp.user) {
       currentUser = resp.user;
