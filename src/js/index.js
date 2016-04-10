@@ -99,6 +99,7 @@ render (
 )}
 //Renders the dashboard when given a currentUser//
 function renderDashboard(user){
+  ajax('http://tranquil-garden-21235.herokuapp.com/posts').then((data)=>{
   render(
     <Dashboard
     authUser={user}
@@ -107,14 +108,16 @@ function renderDashboard(user){
     onPosts={getPosts}
     onScoreBoard={renderScoreBoard}>
       <PostFeed
-      posts={[]}
+      posts={data.user}
       onSelect={renderPost}/>
     </Dashboard>
     ,document.querySelector('.app')
-  )}
+  )
+})
+}
 //Test Function for getting all posts//
 function getPosts(){
-  ajax('https://tranquil-garden-21235.herokuapp.com/post').then((data)=> console.log(data))
+  ajax('https://tranquil-garden-21235.herokuapp.com/posts')
 }
 //Renders the page that allows you to create a new post//
 function renderCreate(){
