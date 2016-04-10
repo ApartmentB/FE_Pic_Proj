@@ -134,9 +134,9 @@ function createAndRender(postData){
   //ajax post to back end//
   let post = new FormData();
   post.append('caption', postData.caption);
-  post.append('title', postData.title);
+  // post.append('title', postData.title);
   post.append('image', postData.file);
-  post.append('user_name', currentUser.user_name)
+  post.append('solved', false)
   ajax({
       url: 'https://tranquil-garden-21235.herokuapp.com/post',
       type: 'POST',
