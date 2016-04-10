@@ -15,7 +15,7 @@ export default class Scoreboard extends Component {
     )
   }
   clickHandler(){
-    let {onBack} = this.props
+    let {onBack, currentUser} = this.props
     onBack(currentUser)
   }
   render() {
@@ -23,9 +23,9 @@ export default class Scoreboard extends Component {
     return (
       <div>
         <ul>
-          {users.map{::this.makeScoreBoard}}
+          {users.map(::this.makeScoreBoard)}
         </ul>
-        <button onClick={this.clickHandler}>Back</button>
+        <button onClick={::this.clickHandler}>Back</button>
       </div>
     );
   }

@@ -28,7 +28,6 @@ h1, h2{
 
 h3, h4{
 	color: black;
-	// margin: 25px; 
 	font-family: 'Arimo', sans-serif;
 	font-size: 1.5em;
 	letter-spacing: .25px;
@@ -214,6 +213,7 @@ footer{
 	flex-direction: row;
 	flex-wrap: wrap;
     justify-content: space-around;
+<<<<<<< HEAD
     	.foot{
     	// border: 1px solid red;
     	width: 10%;
@@ -241,3 +241,10 @@ footer{
     	}
     }
 }
+=======
+}
+//Post Details
+.unsolved {
+	opacity: 0;
+}
+>>>>>>> 23b61ee072e72e2f62e0b8aaa53c093461da8d03
