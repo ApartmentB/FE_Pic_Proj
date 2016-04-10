@@ -18,9 +18,10 @@ export default class PostDetails extends Component {
         $('.caption').removeClass('unsolved')
         $('.status').html('YOU WIN!')
       }
-        else if (data.guess.toLowerCase() !== post.caption.toLowerCase()){
+        else if (data.guess.toLowerCase() !== post.caption.toLowerCase() &&
+        $('.status').html('')){
           $('.status').html('GUESS AGAIN!')
-    }
+    }else { $('.status').html('')}
   }
   render() {
     let {post, onBack} = this.props;
@@ -30,21 +31,20 @@ export default class PostDetails extends Component {
         <div className="post-det-header">
           <h1>Guess The Caption</h1>
         </div>
-        
+
         <img src={post.imgURL} alt={post.title}/>
-        
-        <h2>Type here:</h2>
+        <label htmlFor='guess'><h2>Type here:</h2></label>
         <h2 className='caption unsolved'>{post.caption}</h2>
-        
+
         <SimpleSerialForm onData={::this.dataHandler}>
-          <input type='text' placeholder='Take a guess!' name='guess'/>
+          <input id='guess' type='text' placeholder='Take a guess!' name='guess'/>
           <button className="btn drop-btn" id="submit-guess">Submit</button>
         </SimpleSerialForm>
-        
+
         <div>
           <h1 className='status'></h1>
         </div>
-
+        <button onClick={x=>x}>Next Pic</button>
         <button className="btn drop-btn" onClick={::this.clickHandler}>Back</button>
 
       </div>
