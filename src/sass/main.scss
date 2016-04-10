@@ -74,7 +74,7 @@ p{
 	align-items: center;
 }
 ////////COLUMN CENTER//////////////
-.create-body{
+.create-body, .reg-body{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -365,7 +365,36 @@ footer{
 
 	}
 }
+/////////////Register////////////////////
 
+.reg-body{
+	// border: 1px solid blue;
+	.reg-prompt{
+	font-size: .8em;
+	}
+	div{
+		// border: 1px solid blue;
+		margin: 10px;
+		text-align: center;
+	}
+	.reg-form{
+		// border: 1px solid blue;
+		#reg-text-area{
+			// border: 1px solid blue;
+			text-align: right;
+			label{
+				font-size: .95em;
+				// font-weight: lighter;
+			}
+			input{margin-left:10px;}
+
+		}
+	}
+}
+#reg-back{
+		margin-left: 15px;
+		margin-bottom: 15px;
+	}
 //Post Details
 .unsolved {
 	opacity: 0;
