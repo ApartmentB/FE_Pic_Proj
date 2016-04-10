@@ -32,7 +32,7 @@ export default class PostDetails extends Component {
           <h1>Guess The Caption</h1>
         </div>
 
-        <img src={post.imgURL} alt={post.title}/>
+        <img src={post.image} alt='No hints!'/>
         <label htmlFor='guess'><h2>Type here:</h2></label>
         <h2 className='caption unsolved'>{post.caption}</h2>
 

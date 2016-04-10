@@ -11,7 +11,6 @@ import PostDetails from './post_details';
 import PostFeed from './postfeed';
 import Scoreboard from './scoreboard';
 import Cookies from 'js-cookie';
-import tempArr from './tempArr'
 
 //Declaring User to be on a logged in page//
 let currentUser = null;
@@ -100,23 +99,22 @@ render (
 )}
 //Renders the dashboard when given a currentUser//
 function renderDashboard(user){
-
   render(
     <Dashboard
     authUser={user}
     onLogOut={logOut}
     onMake={renderCreate}
-    onUsers={getUsers}
+    onPosts={getPosts}
     onScoreBoard={renderScoreBoard}>
       <PostFeed
-      posts={tempArr}
+      posts={[]}
       onSelect={renderPost}/>
     </Dashboard>
     ,document.querySelector('.app')
   )}
-//Test Function for getting all users//
-function getUsers(){
-  ajax('https://tranquil-garden-21235.herokuapp.com/post').then((data)=> console.log(data))
+//Test Function for getting all posts//
+function getPosts(){
+  ajax('https://tranquil-garden-21235.herokuapp.com/posts').then((data)=> console.log(data))
 }
 //Renders the page that allows you to create a new post//
 function renderCreate(){
@@ -135,23 +133,24 @@ function createAndRender(postData){
   let post = new FormData();
   post.append('caption', postData.caption);
   // post.append('title', postData.title);
-  post.append('image', postData.file);
-  post.append('solved', false)
+  post.append('file', postData.file);
+  post.append('solved', false);
   ajax({
-      url: 'https://tranquil-garden-21235.herokuapp.com/post',
+      url: 'https://tranquil-garden-21235.herokuapp.com/posts',
       type: 'POST',
       data: post,
       cache: false,
       dataType: 'json',
       processData: false,
-      contentType: false
-      // headers: {
-      //   'auth_token': currentUser.auth_token
-      // }
+      contentType: false,
+      headers: {
+        'auth_token': currentUser.auth_token
+      }
     }).then((resp) => {
       console.log(resp)
       if (resp.post) {
-        renderDashboard(currentUser)
+        // renderDashboard(currentUser)
+        renderPost(resp.post)
     };
   })
 }
