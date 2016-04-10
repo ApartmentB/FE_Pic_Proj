@@ -136,7 +136,7 @@ function createAndRender(postData){
   post.append('caption', postData.caption);
   post.append('title', postData.title);
   post.append('image', postData.file);
-  // post.append('', )
+  post.append('user_name', currentUser.user_name)
   ajax({
       url: 'https://tranquil-garden-21235.herokuapp.com/post',
       type: 'POST',
@@ -168,15 +168,6 @@ function renderPost(clickedPost){
 //Sends the registration info to the back end to add the user to the data base//
 //Logs in the user that just registered and renders the Dashboard with the user//
 function regAndRender(user){
-
-  // let newUser = new FormData();
-  // newUser.append('full_name', user.full_name);
-  // newUser.append('email', user.email);
-  // newUser.append('user_name', user.user_name);
-  // newUser.append('password', user.password);
-  // // NProgress.start();
-
-
   ajax({
       url: 'https://tranquil-garden-21235.herokuapp.com/register',
       type: 'POST',
