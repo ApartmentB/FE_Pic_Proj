@@ -29,7 +29,7 @@ export default class PostDetails extends Component {
     }else { $('.status').html('')}
   };
 
-  nextPickHandler(){
+  nextPicHandler(){
     let { post, onNextPic } = this.props;
     onNextPic(post)
 }
@@ -66,7 +66,7 @@ export default class PostDetails extends Component {
         <div>
           <h1 className='status'></h1>
         </div>
-        {/*<button onClick={::this.nextPicHandler}>Next Pic</button>*/}
+        <button onClick={::this.nextPicHandler}>Next Pic</button>
         <button className="btn drop-btn" onClick={::this.clickHandler}>Back</button>
         <button className='btn delete-btn' onClick={::this.deleteHandler}>Delete</button>
 

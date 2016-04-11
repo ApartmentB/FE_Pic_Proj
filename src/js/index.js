@@ -188,11 +188,11 @@ function deletePost(post){
 //t
 function nextPost(currentPost){
 ajax('http://tranquil-garden-21235.herokuapp.com/posts').then((posts)=>{
-  posts.filter(function(post){
-    let index = posts.indexOf(post);
-    if (post.id === currentPost.id) {
-      renderPost(posts.indexOf([index+1]));
-    }
+  let postArr = posts.post;
+  postArr.forEach(function(eachPost){
+      if (currentPost.id === eachPost.id - 1){
+        renderPost(eachPost)
+      }
   })
 });
 
