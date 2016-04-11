@@ -36,7 +36,7 @@ h3, h4{
 /////////Standard Titles/////////////
 .create-post-header, .post-det-header,
 .reg-header, .feed-header, .logged-in-header, 
-.scoreboard-header{
+.scoreboard-header, .instructions-header{
 	h1{
 		font-size: 2.5em;
 		letter-spacing: 0px;
@@ -68,7 +68,7 @@ p{
 ////////ROW CENTER///////////////////
 .hintpic, .create-post-header,
 .post-det-header, .reg-header, 
-.scoreboard-header{
+.scoreboard-header, .instructions-header{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -112,7 +112,7 @@ p{
 ///centered header///
 .create-post-header, .post-det-header,
 .reg-header, .feed-header, .scoreboard-header, 
-.logged-in-header{
+.logged-in-header, .instructions-header{
 	flex-direction: column;
 	height: 105px;
 	background-color: $rich-black;
@@ -377,19 +377,22 @@ footer{
 // }
 .create-body{
 		// border: 1px solid blue;
-	.drop-caption{
+	// .drop-caption/////
+	.form-body{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		.caption-text{
-		div input{
-			width: 200px;
-		}
-	
+		// .caption-text{
+		// div input{
+		// 	width: 200px;
+		// }
 }
 }
+#create-post-cancel{
+	margin-top: 20px;
 }
+
 ////////////Scoreboard///////////////////
 .scores{
 	// border: 1px solid $rich-black;
@@ -516,5 +519,24 @@ align-items: center;
 	opacity: 0;
 }
 
-
-
+/////////////////INSTRUCTIONS///////////////////////
+.instructions-box{
+	border: 3px solid lighten($rich-black, 10%);
+	border-radius: 5px;
+	margin: 55px;
+	padding: 40px;
+	.set-one {
+		margin-bottom: 25px;
+		li{
+		font-family: 'Arimo', sans-serif;
+		font-size: 20px;
+		margin: 5px;
+	}
+	}
+	.set-two li{
+		font-family: 'Arimo', sans-serif;
+		font-size: 14px;
+		margin: 5px;
+		list-style: none;
+	}
+}

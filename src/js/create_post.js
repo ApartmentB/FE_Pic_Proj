@@ -49,25 +49,29 @@ export default class CreatePost extends Component {
 						</Dropzone>
 					</div>
 
-					<label>
-						<div className="drop-caption">
+				<label>
+					<div className="form-body">
 							<div className="caption-text">
 								<p>Your original caption:</p>
 							</div>
+							
 							<div>
 							<input type="text" name="caption"/>
 							</div>
-						</div>
-
+					
+						<div>
 						<button className="btn drop-btn" id="submit-post">
 							Submit
 						</button>
+						</div>
+					</div>
+				</label>
 
 
-					</label>
 				</SimpleSerialForm>
 				<button 
 				className="btn drop-btn"
+				id="create-post-cancel"
 				onClick={::this.clickHandler}>
 				Cancel
 				</button>
