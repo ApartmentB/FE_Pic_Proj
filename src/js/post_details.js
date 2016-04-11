@@ -22,6 +22,7 @@ export default class PostDetails extends Component {
     if (data.guess.toLowerCase() === post.caption.toLowerCase()){
         $('.caption').removeClass('unsolved')
         $('.status').html('YOU WIN!')
+        data.guess = ''
       }
         else if (data.guess.toLowerCase() !== post.caption.toLowerCase() &&
         $('.status').html('')){
@@ -30,8 +31,8 @@ export default class PostDetails extends Component {
   };
 
   nextPicHandler(){
-    let { post, onNextPic } = this.props;
-    onNextPic(post)
+    // let { post, onNextPic } = this.props;
+    // onNextPic(post)
 }
   deleteHandler(){
     let {onDelete, post} = this.props;
@@ -65,7 +66,7 @@ export default class PostDetails extends Component {
                 <div>
                   <button className="btn drop-btn" id="submit-guess">Submit</button>
                 </div>
-                
+
               </SimpleSerialForm>
             </div>
         </div>
@@ -74,7 +75,7 @@ export default class PostDetails extends Component {
           <h1 className='status'></h1>
         </div>
 
-        <button className="btn drop-btn" id="next-pic" onClick={::this.nextPicHandler}>Next Pic</button>
+        {/*<button className="btn drop-btn" id="next-pic" onClick={::this.nextPicHandler}>Next Pic</button>*/}
         <button className="btn drop-btn" id="back-bn" onClick={::this.clickHandler}>Back</button>
         <button className="btn drop-btn" id="del-bn" onClick={::this.deleteHandler}>Delete</button>
 

@@ -1,6 +1,12 @@
 import React, {PropTypes, Component} from 'react';
-
+import Cookies from 'js-cookie';
 export default class Instructions extends Component {
+
+  clickHandler(){
+    let {onBack, user} = this.props;
+    onBack(user)
+  }
+
   render() {
     return (
       <div>
@@ -16,6 +22,7 @@ export default class Instructions extends Component {
           <li>Once you're on the create post page you can upload your own image and add a secret caption that users can try to guess!</li>
           <li>And that's it! Register, browse pics, guess right, gain points! Compete with friends to see who can get the most points!</li>
         </ul>
+        <button onClick={::this.clickHandler}>Back</button>
       </div>
     );
   }

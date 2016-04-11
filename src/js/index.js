@@ -75,7 +75,7 @@ function renderHome(){
 //Renders a set of instructions for the game//
 function renderInstructions(){
 render (
-  <Instructions/>
+  <Instructions onBack={renderDashboard} user={currentUser}/>
   ,document.querySelector('.app')
 )}
 //Renders the scoreboard page when the scoreboard button is clicked//
@@ -109,7 +109,7 @@ function renderDashboard(user){
     authUser={user}
     onLogOut={logOut}
     onMake={renderCreate}
-    onPosts={getPosts}
+    onPosts={renderInstructions}
     onScoreBoard={renderScoreBoard}>
       <PostFeed
       posts={data.post}
