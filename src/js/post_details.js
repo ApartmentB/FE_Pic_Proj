@@ -7,7 +7,11 @@ export default class PostDetails extends Component {
     post: PropTypes.object,
     onBack: PropTypes.func.isRequired,
     currentUser: PropTypes.object.isRequired,
+
+    onNextPic: PropTypes.func.isRequired
+
     onDelete: PropTypes.func.isRequired
+
   }
   clickHandler(){
     let {onBack, currentUser} = this.props
@@ -29,9 +33,15 @@ export default class PostDetails extends Component {
     onNextPic()
 
   }
+
+  nextPickHandler(){
+    let { onNextPic } = this.props;
+    onNextPic()
+
   deleteHandler(){
     let {onDelete, post} = this.props
     onDelete(post)
+
   }
   render() {
     let {post, onBack, onDelete} = this.props;
@@ -58,7 +68,7 @@ export default class PostDetails extends Component {
         <div>
           <h1 className='status'></h1>
         </div>
-        <button onClick={x=>x}>Next Pic</button>
+        <button onClick={::this.nextPicHandler}>Next Pic</button>
         <button className="btn drop-btn" onClick={::this.clickHandler}>Back</button>
         <button className='btn delete-btn' onClick={::this.deleteHandler}>Delete</button>
 

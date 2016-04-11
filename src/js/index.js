@@ -168,7 +168,11 @@ function renderPost(clickedPost){
   post={clickedPost}
   onBack={renderDashboard}
   currentUser={currentUser}
+<<<<<<< HEAD
+  onNextPic={renderPost}/>
+=======
   onDelete={deletePost}/>
+>>>>>>> 7c76e12ce501afed97e99d4c3e1f42b7b18acc20
   ,document.querySelector('.app')
 )}
 //Deletes post if the user that created the post is signed in//
