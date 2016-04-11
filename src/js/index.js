@@ -129,7 +129,7 @@ function getPosts(){
 function renderCreate(){
   render(
     <CreatePost
-    currentUser={Cookies.getJSON('currentUser')}
+    currentUser={currentUser}
     onCreate={createAndRender}
     onCancel={renderDashboard}/>
     ,document.querySelector('.app')

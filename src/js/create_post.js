@@ -63,21 +63,21 @@ export default class CreatePost extends Component {
 							Submit
 						</button>
 
-						<button 
-							className="btn drop-btn"
-							onClick={::this.clickHandler}>
-							Cancel
-						</button>
-						
+
 					</label>
 				</SimpleSerialForm>
+				<button 
+				className="btn drop-btn"
+				onClick={::this.clickHandler}>
+				Cancel
+				</button>
 			</div>
 		</div>
 
 			<div className="standard-footer">
           	&copy; Hint Pic 2016
         	</div>
-			
+
 		</div>
 		)
 	}
