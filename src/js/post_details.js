@@ -8,7 +8,7 @@ export default class PostDetails extends Component {
     onBack: PropTypes.func.isRequired,
     currentUser: PropTypes.object.isRequired,
 
-    onNextPic: PropTypes.func.isRequired
+    onNextPic: PropTypes.func.isRequired,
 
     onDelete: PropTypes.func.isRequired
 
@@ -33,11 +33,6 @@ export default class PostDetails extends Component {
     onNextPic()
 
   }
-
-  nextPickHandler(){
-    let { onNextPic } = this.props;
-    onNextPic()
-
   deleteHandler(){
     let {onDelete, post} = this.props
     onDelete(post)
