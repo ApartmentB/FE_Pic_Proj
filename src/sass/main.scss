@@ -391,14 +391,20 @@ footer{
 }
 }
 ////////////Scoreboard///////////////////
+.scores{
+	// border: 1px solid $rich-black;
+	height: 700px;
+	margin: 30px;
+}
+
 .scoreboard{
 	// border: 1px solid red;
-	ol{
-		height: 300px;
-		margin: 35px;
-		border: 1.5px solid $rich-black;
-		border-radius: 10px;
-	}
+	// ol{
+	// 	height: 300px;
+	// 	margin: 35px;
+	// 	border: 1.5px solid $rich-black;
+	// 	border-radius: 10px;
+	// }
 	#score-back{
 		// border: 1px solid red;
 		margin-left: 35px;
@@ -509,5 +515,6 @@ align-items: center;
 .unsolved {
 	opacity: 0;
 }
+
 
 
