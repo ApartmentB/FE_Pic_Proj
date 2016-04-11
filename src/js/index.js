@@ -176,7 +176,7 @@ function renderPost(clickedPost){
 function deletePost(post){
   console.log(currentUser)
   ajax({
-    url: `tranquil-garden-21235.herokuapp.com/posts/${post.id}/`,
+    url: `http://tranquil-garden-21235.herokuapp.com/posts/${post.id}/`,
     type: 'DELETE',
     headers: {
       'auth_token': currentUser.auth_token
