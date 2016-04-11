@@ -439,10 +439,23 @@ footer{
 .post-det-header{
 border: 1px solid blue;
 }
+
+.game-area{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
 .post-det-body{
 border: 1px solid red;
-display: inline-block;
-text-align: center;
+// display: inline-block;
+// text-align: center;
+// margin: 0 auto;
+	img{
+		text-align: center;
+		height: 195px;
+		width: 195px;
+		margin: 25px;
+	}
 	h2{
 		font-size: 1.5em;
 		font-family: 'Arimo', sans-serif;
@@ -450,6 +463,8 @@ text-align: center;
 }
 .post-det-form{
 border: 1px solid pink;
+// display: inline-block;
+
 }
 ///////////Post Feed///////////////
 .feed-header{
