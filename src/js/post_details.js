@@ -57,8 +57,15 @@ export default class PostDetails extends Component {
 
             <div className="post-det-form">
               <SimpleSerialForm onData={::this.dataHandler}>
-                <input id='guess' type='text' placeholder='Take a guess!' name='guess'/>
-                <button className="btn drop-btn" id="submit-guess">Submit</button>
+
+                <div>
+                  <input id='guess' type='text' placeholder='Take a guess!' name='guess'/>
+                </div>
+
+                <div>
+                  <button className="btn drop-btn" id="submit-guess">Submit</button>
+                </div>
+                
               </SimpleSerialForm>
             </div>
         </div>
@@ -66,9 +73,10 @@ export default class PostDetails extends Component {
         <div>
           <h1 className='status'></h1>
         </div>
-        <button onClick={::this.nextPicHandler}>Next Pic</button>
-        <button className="btn drop-btn" onClick={::this.clickHandler}>Back</button>
-        <button className='btn delete-btn' onClick={::this.deleteHandler}>Delete</button>
+
+        <button className="btn drop-btn" id="next-pic" onClick={::this.nextPicHandler}>Next Pic</button>
+        <button className="btn drop-btn" id="back-bn" onClick={::this.clickHandler}>Back</button>
+        <button className="btn drop-btn" id="del-bn" onClick={::this.deleteHandler}>Delete</button>
 
       </div>
 
