@@ -168,7 +168,7 @@ function renderPost(clickedPost){
   post={clickedPost}
   onBack={renderDashboard}
   currentUser={currentUser}
-  onNextPic={renderPost}
+  onNextPic={nextPost}
   onDelete={deletePost}/>
   ,document.querySelector('.app')
 )}
@@ -183,6 +183,22 @@ function deletePost(post){
     }
   })
 }
+
+//generate a new game clicking "next" from current game
+//t
+function nextPost(currentPost){
+ajax('http://tranquil-garden-21235.herokuapp.com/posts').then((posts)=>{
+  posts.filter(function(post){
+    let index = posts.indexOf(post);
+    if (post.id === currentPost.id) {
+      renderPost(posts.indexOf([index+1]));
+    }
+  })
+});
+
+// var postPosition = posts.indexOf(['currentPost']) + 1
+}
+
 //Sends the registration info to the back end to add the user to the data base//
 //Logs in the user that just registered and renders the Dashboard with the user//
 function regAndRender(user){
