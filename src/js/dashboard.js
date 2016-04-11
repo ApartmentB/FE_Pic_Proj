@@ -21,7 +21,7 @@ export default class Dashboard extends Component {
           <aside>
             <button className="btn black-btn" id="btn-login" onClick={onMake}>New Post</button>
             <button className="btn black-btn" id="btn-login" onClick={onScoreBoard}>Scoreboard</button>
-            <button className="btn black-btn" id="btn-login" onClick={onPosts}>Get All Users</button>
+            {/*<button className="btn black-btn" id="btn-login" onClick={onPosts}>Get All Posts</button>*/}
             <button className="btn black-btn" id="btn-login" onClick={onLogOut}>Log Out</button>
           </aside>
           <div className="main">

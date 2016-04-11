@@ -6,10 +6,11 @@ export default class PostFeed extends Component {
     onSelect: PropTypes.func.isRequired,
   }
   populate(post){
+    // console.log(post)
     let {onSelect} = this.props
-    return (<li key={post.imgURL} onClick={onSelect.bind(null, post)}>
-           <img src={post.imgURL} alt={post.caption}/>
-           {post.solved}
+    return (<li key={post.url} onClick={onSelect.bind(null, post)}>
+              <img src={post.url} alt={'No Hints!'}/>
+              <span>{post.solved}</span>
            </li>
          )
        }
