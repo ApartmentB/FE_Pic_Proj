@@ -45,7 +45,7 @@ export default class CreatePost extends Component {
 
 					<div className="drop-img">
 						<Dropzone onDrop={ ::this.dropHandler }>
-							<img src={ preview } height="195px" width="195px"/>
+							<img src={ preview } height="195px"/>
 						</Dropzone>
 					</div>
 
