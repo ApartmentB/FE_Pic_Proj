@@ -158,8 +158,8 @@ function createAndRender(postData){
     }).then((resp) => {
       console.log(resp)
       if (resp.post) {
-        // renderDashboard(currentUser)
-        renderPost(resp.post)
+        renderDashboard(currentUser)
+        // renderPost(resp.post)
     };
   })
 }
@@ -183,6 +183,10 @@ function deletePost(post){
     type: 'DELETE',
     headers: {
       'auth_token': currentUser.auth_token
+    }
+  }).then(resp =>{
+    if (resp){
+      renderDashboard(currentUser)
     }
   })
 }
