@@ -80,14 +80,17 @@ render (
 )}
 //Renders the scoreboard page when the scoreboard button is clicked//
 function renderScoreBoard(){
+  ajax('https://tranquil-garden-21235.herokuapp.com/user').then(data=>{
+    console.log(data)
   render(
     <Scoreboard
     currentUser={currentUser}
     onBack={renderDashboard}
-    users={[]}
+    users={data.user}
     />
     ,document.querySelector('.app')
   )
+  })
 }
 //Renders the registration page when the Register button is clicked//
 function renderRegister(){
