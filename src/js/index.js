@@ -219,10 +219,11 @@ function regAndRender(user){
       console.log('response', resp);
       // console.log(resp.user)
       if (resp.user) {
-      currentUser = resp.user;
+      let newUser = resp.user;
       Cookies.set( 'currentUser',
-      resp.user, { expires: 1 })
-      renderDashboard(resp.user);
+      newUser, { expires: 1 })
+      logIn({user_name: newUser.user_name, password: newUser.password})
+      renderDashboard(newUser);
     };
   })
 }
