@@ -452,8 +452,7 @@ border: 1px solid red;
 // margin: 0 auto;
 	img{
 		text-align: center;
-		height: 195px;
-		width: 195px;
+		max-height: 300px;
 		margin: 25px;
 	}
 	h2{
@@ -494,7 +493,6 @@ border: 1px solid pink;
 	}
 	}
 }
-
 
 //Post Details
 .unsolved {
