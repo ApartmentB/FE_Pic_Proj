@@ -108,7 +108,7 @@ function renderDashboard(user){
     onPosts={getPosts}
     onScoreBoard={renderScoreBoard}>
       <PostFeed
-      posts={data.user}
+      posts={data.post}
       onSelect={renderPost}/>
     </Dashboard>
     ,document.querySelector('.app')
