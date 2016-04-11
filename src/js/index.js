@@ -100,6 +100,7 @@ render (
 //Renders the dashboard when given a currentUser//
 function renderDashboard(user){
   ajax('http://tranquil-garden-21235.herokuapp.com/posts').then((data)=>{
+    console.log(data)
   render(
     <Dashboard
     authUser={user}
@@ -117,7 +118,9 @@ function renderDashboard(user){
 }
 //Test Function for getting all posts//
 function getPosts(){
-  ajax('https://tranquil-garden-21235.herokuapp.com/posts')
+  ajax('https://tranquil-garden-21235.herokuapp.com/user').then(data=>{
+    console.log(data)
+  })
 }
 //Renders the page that allows you to create a new post//
 function renderCreate(){
@@ -165,26 +168,23 @@ function renderPost(clickedPost){
   post={clickedPost}
   onBack={renderDashboard}
   currentUser={currentUser}
-
   onNextPic={nextPost}
-
   onDelete={deletePost}/>
-
   ,document.querySelector('.app')
 )}
 //Deletes post if the user that created the post is signed in//
 function deletePost(post){
-  console.log(currentUser.auth_token)
+  console.log(currentUser)
   ajax({
-    url: `tranquil-garden-21235.herokuapp.com/posts/:${post.id}`,
+    url: `tranquil-garden-21235.herokuapp.com/posts/${post.id}/`,
     type: 'DELETE',
-    headers:{
+    headers: {
       'auth_token': currentUser.auth_token
     }
   })
 }
 
-//generate a new game clicking "next" from current game 
+//generate a new game clicking "next" from current game
 //t
 function nextPost(currentPost){
 ajax('http://tranquil-garden-21235.herokuapp.com/posts').then((posts)=>{
@@ -219,4 +219,5 @@ function regAndRender(user){
     };
   })
 }
+// Cookies.remove('currentUser')
 renderHome()

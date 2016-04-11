@@ -27,12 +27,21 @@ export default class PostDetails extends Component {
         $('.status').html('')){
           $('.status').html('GUESS AGAIN!')
     }else { $('.status').html('')}
+<<<<<<< HEAD
+  };
+  nextPicHandler(){
+    let {onNextPic} =this.props;
+    onNextPic()
+
+  }
+=======
   }
 
   nextPickHandler(){
     let { post, onNextPic } = this.props;
     onNextPic(post)
 }
+>>>>>>> 906fb95f314b216a4f83062322afc0ed7951b9f3
   deleteHandler(){
     let {onDelete, post} = this.props;
     onDelete(post)
